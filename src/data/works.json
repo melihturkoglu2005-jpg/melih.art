@@ -23,6 +23,12 @@
       "description": "I built the Psikologofisi project completely from scratch. I took on tasks such as pixel-perfect coding of existing designs and making RestAPI connections. In this project, I prioritized user experience and paid attention to details.",
       "image": "/images/works/psikologofisi.png",
       "link": "https://www.psikologofisi.com"
+    },
+        {
+      "title": "PsikologOfisi",
+      "description": "I built the Psikologofisi project completely from scratch. I took on tasks such as pixel-perfect coding of existing designs and making RestAPI connections. In this project, I prioritized user experience and paid attention to details.",
+      "image": "/images/works/psikologofisi.png",
+      "link": "https://www.psikologofisi.com"
     }
   ]
 }
