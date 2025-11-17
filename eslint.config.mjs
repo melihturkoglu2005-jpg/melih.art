@@ -1,23 +1,23 @@
-import pluginNext from '@next/eslint-plugin-next';
-import parser from '@typescript-eslint/parser';
+import pluginNext from "@next/eslint-plugin-next"
+import parser from "@typescript-eslint/parser"
 
 export default [
   {
-    name: 'ESLint Config - nextjs',
+    name: "ESLint Config - nextjs",
     languageOptions: {
       parser,
       parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
+        ecmaVersion: "latest",
+        sourceType: "module",
         ecmaFeatures: {
-          jsx: true,
-        },
-      },
+          jsx: true
+        }
+      }
     },
     plugins: {
-      '@next/next': pluginNext,
+      "@next/next": pluginNext
     },
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    files: [ "**/*.{js,mjs,cjs,ts,jsx,tsx}" ],
     rules: {
       "no-multiple-empty-lines": [ "error", { max: 1, maxEOF: 1, maxBOF: 1 } ],
       "no-multi-spaces": [ "error", { ignoreEOLComments: false } ],
@@ -40,5 +40,5 @@ export default [
       "space-in-parens": [ "error", "never" ],
       "space-before-blocks": [ "error", "always" ]
     }
-  },
-];
+  }
+]
