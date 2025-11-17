@@ -1,16 +1,16 @@
 {
   "profile": {
-    "email": "yilmaz.ev@outlook.com",
-    "full_name": "Yılmaz Ev",
+    "email": "eposta",
+    "full_name": "Melih Türkoğlu",
     "avatar": "/images/avatar.jpeg",
     "social": [
       {
-        "platform": "Github",
-        "link": "https://github.com/yilmazev"
+        "platform": "Behance",
+        "link": "https://github.com"
       },
       {
         "platform": "LinkedIn",
-        "link": "https://linkedin.com/in/yilmazev"
+        "link": "https://linkedin.com/in/"
       }
     ]
   }

@@ -6,10 +6,10 @@ import { Rubik } from "next/font/google"
 import ThemeProvider from "../components/ThemeProvider"
 import "../styles/globals.css"
 
-const rubik = Rubik({ subsets: [ "latin" ], weight: [ "300", "400", "500", "600", "700", "800", "900" ] })
+const rubik = Rubik({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] })
 
 export const metadata: Metadata = {
-  title: "Yilmaz Ev - Fullstack Developer",
+  title: "Melih Türkoğlu",
   description: "I am a fullstack developer who creates user-friendly and smooth interfaces."
 }
 

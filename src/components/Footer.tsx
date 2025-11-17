@@ -3,6 +3,7 @@
 import IconSparkles from "@/assets/icons/sparkles.svg"
 import { useTranslations } from "next-intl"
 import Link from "next/link"
+import IconBehance from "../assets/icons/behance.svg"
 import IconGithub from "../assets/icons/github.svg"
 import IconLinkedIn from "../assets/icons/linkedin.svg"
 import IconMoveRight from "../assets/icons/move-right.svg"
@@ -44,6 +45,7 @@ const Footer = () => {
               {social.map((item, index) => {
                 const icon = {
                   github: <IconGithub className="size-5 lg:size-6" />,
+                  behance: <IconBehance className="size-5 lg:size-6" />,
                   linkedin: <IconLinkedIn className="size-5 lg:size-6" />
                 }[item.platform.toLocaleLowerCase()]
 

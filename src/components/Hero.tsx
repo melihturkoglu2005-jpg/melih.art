@@ -17,7 +17,7 @@ const Hero = () => {
   const { email } = useProfileStore()
   const { scrollYProgress } = useScroll()
 
-  const [ isFirstLoad, setIsFirstLoad ] = useState(true)
+  const [isFirstLoad, setIsFirstLoad] = useState(true)
 
   const containerRef = useRef(null)
   const isInView = useInView(containerRef, { margin: "-50% 0px" })
@@ -27,36 +27,36 @@ const Hero = () => {
       icon: <IconType className="size-7" />,
       label: t("hero_term_1"),
       className: "rotate-2 right-12 top-0 from-lime-200 to-lime-300 text-lime-700 dark:from-lime-300 dark:to-lime-500 dark:text-lime-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 1000 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -1000 ])
+      moveX: useTransform(scrollYProgress, [0, 0.2], [0, 1000]),
+      moveY: useTransform(scrollYProgress, [0, 0.2], [0, -1000])
     },
     {
       icon: <IconMonitorSmartPhone className="size-7" />,
       label: t("hero_term_2"),
       className: "rotate-3 right-28 top-16 from-sky-200 to-sky-300 text-sky-700 dark:from-sky-300 dark:to-sky-500 dark:text-sky-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -1200 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 800 ])
+      moveX: useTransform(scrollYProgress, [0, 0.2], [0, -1200]),
+      moveY: useTransform(scrollYProgress, [0, 0.2], [0, 800])
     },
     {
       icon: <IconGlobe className="size-7" />,
       label: t("hero_term_3"),
       className: "-rotate-6 right-0 top-14 from-yellow-200 to-yellow-300 text-yellow-700 dark:from-yellow-300 dark:to-yellow-500 dark:text-yellow-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 900 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 1100 ])
+      moveX: useTransform(scrollYProgress, [0, 0.2], [0, 900]),
+      moveY: useTransform(scrollYProgress, [0, 0.2], [0, 1100])
     },
     {
       icon: <IconVariable className="size-7" />,
       label: t("hero_term_4"),
       className: "rotate-6 right-28 top-8 from-purple-200 to-purple-300 text-purple-700 dark:from-purple-300 dark:to-purple-500 dark:text-purple-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -900 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -1100 ])
+      moveX: useTransform(scrollYProgress, [0, 0.2], [0, -900]),
+      moveY: useTransform(scrollYProgress, [0, 0.2], [0, -1100])
     }
   ]
 
   useEffect(() => {
     if (!isFirstLoad) return
     if (isInView) setIsFirstLoad(false)
-  }, [ isInView ])
+  }, [isInView])
 
   return (
     <section id="hero" className="relative flex items-center justify-center py-4 px-2 overflow-hidden">
