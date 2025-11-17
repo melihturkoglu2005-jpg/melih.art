@@ -1,24 +1,30 @@
 {
   "skills": [
     {
-      "title": "languages",
-      "skills": ["HTML5", "CSS3", "JavaScript", "TypeScript", "GoLang"]
-    },
-    {
-      "title": "frameworks",
+      "title": "lTasarım Araçları",
       "skills": [
-        "React",
-        "React Native (with Expo)",
-        "Next.js",
-        "Bootstrap 5",
-        "Tailwind",
-        "Sass",
-        "Styled Components"
+        "Figma",
+        "Photoshop",
+        "Illustrator"
       ]
     },
     {
-      "title": "tools",
-      "skills": ["Git", "Jira", "ESLint", "Figma", "DataGrip", "Termius"]
+      "title": "Tasarım Süreci",
+      "skills": [
+        "Kullanıcı Araştırması",
+        "Wireframing",
+        "Prototype",
+        "Kullanılabilirlik Testi",
+        "Geri Bildirim"
+      ]
+    },
+    {
+      "title": "Teknik Yetkinlik",
+      "skills": [
+        "Responsive Design",
+        "Motion Design",
+        "Grid System"
+      ]
     }
   ]
 }
