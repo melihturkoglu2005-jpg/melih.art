@@ -1,10 +1,9 @@
 {
   "works": [
     {
-      "title": "unnamed",
-      "description": "description...",
-      "image": "/images/works/psikologofisi.png",
-      "link": "https://www.link"
+      "title": "Seyahat Planlama Uygulaması",
+      "description": "Kişiye özel seyahat önerilerini keşfetmeyi sağlayan bir mobil uygulama.",
+      "image": "/images/works/travelapp.png"
     }
   ]
 }
