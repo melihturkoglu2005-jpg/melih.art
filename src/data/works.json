@@ -3,7 +3,8 @@
     {
       "title": "Seyahat Planlama Uygulaması",
       "description": "Kişiye özel seyahat önerilerini keşfetmeyi sağlayan bir mobil uygulama.",
-      "image": "/images/works/travelapp.png"
+      "image": "/images/works/travelapp.png",
+      "link": "https://example.com"
     }
   ]
 }
