@@ -1,6 +1,18 @@
 {
   "works": [
     {
+      "title": "Yemek Sipariş Uygulaması",
+      "description": "Bu kullanıcı arayüzü (UI) çalışmasında, kullanıcı dostu bir deneyim (UX) ile modern estetiği birleştirmeyi hedefledim. Canlı renk paleti ve temiz kart tasarımları sayesinde kullanıcının yemek seçme ve sipariş verme sürecini en akıcı hale getirdim.",
+      "image": "/images/works/foodapp.png",
+      "link": "https://melih.work"
+    },
+    {
+      "title": "Dijital Cüzdan ve Finans Yönetimi",
+      "description": "Bu çalışmada, karmaşık finansal verileri kullanıcı için anlaşılır ve estetik bir arayüze dönüştürmeyi amaçladım. Dark Mode (Karanlık Tema) tercihiyle premium bir his yaratırken, mor ve neon vurgularla modern fintech dünyasının dinamizmini yansıttım.",
+      "image": "/images/works/cuzdan.png",
+      "link": "https://melih.work"
+    },
+    {
       "title": "Seyahat Planlama Uygulaması",
       "description": "Kişiye özel seyahat önerilerini keşfetmeyi sağlayan bir mobil uygulama. Popüler turları, yeni rotaları, şehir rehberlerini ve detaylı gezi bilgilerini görüntüleyin. Mesafe, süre, sıcaklık ve kullanıcı puanlarını inceleyin",
       "image": "/images/works/travelapp.png",
@@ -22,18 +34,6 @@
       "title": "Çilekli Matcha: Bir Doğa Masalı",
       "description": "Bu çalışmada, ürünün doğal ve ferahlatıcı içeriğini vurgulamak için 'mikro dünya' konsepti kullanılmıştır. İçecek, masalsı bir bahçenin merkezine yerleştirilerek bir hikaye oluşturulmuştur.",
       "image": "/images/works/matcha.png",
-      "link": "https://melih.work"
-    },
-    {
-      "title": "Yemek Sipariş Uygulaması",
-      "description": "Bu kullanıcı arayüzü (UI) çalışmasında, kullanıcı dostu bir deneyim (UX) ile modern estetiği birleştirmeyi hedefledim. Canlı renk paleti ve temiz kart tasarımları sayesinde kullanıcının yemek seçme ve sipariş verme sürecini en akıcı hale getirdim.",
-      "image": "/images/works/foodapp.png",
-      "link": "https://melih.work"
-    },
-    {
-      "title": "Dijital Cüzdan ve Finans Yönetimi",
-      "description": "Bu çalışmada, karmaşık finansal verileri kullanıcı için anlaşılır ve estetik bir arayüze dönüştürmeyi amaçladım. Dark Mode (Karanlık Tema) tercihiyle premium bir his yaratırken, mor ve neon vurgularla modern fintech dünyasının dinamizmini yansıttım.",
-      "image": "/images/works/foodapp.png",
       "link": "https://melih.work"
     }
   ]
