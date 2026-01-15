@@ -72,7 +72,7 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescri
               </svg>
             </button>
 
-            <div className="w-full h-full max-w-7xl max-h-[85vh] flex flex-col gap-4 lg:gap-8">
+            <div className="w-full h-full max-w-7xl max-h-[85vh] flex flex-col">
               {/* Image Container */}
               <div className="flex-1 relative min-h-0">
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-900/20 dark:bg-neutral-100/5">
@@ -90,22 +90,24 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescri
               {/* Project Info */}
               {(projectTitle || projectDescription) && (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
-                  className="w-full lg:w-auto flex flex-col justify-center space-y-3 lg:space-y-4 px-2 lg:px-0"
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.15 }}
+                  className="w-full pt-6 lg:pt-8 px-2 lg:px-0"
                 >
-                  {projectTitle && (
-                    <h2 className="text-xl lg:text-3xl font-medium text-neutral-100 dark:text-neutral-900 leading-tight">
-                      {projectTitle}
-                    </h2>
-                  )}
-                  {projectDescription && (
-                    <p className="text-sm lg:text-lg text-neutral-300 dark:text-neutral-700 leading-relaxed line-clamp-4 lg:line-clamp-none">
-                      {projectDescription}
-                    </p>
-                  )}
+                  <div className="max-w-3xl mx-auto space-y-3">
+                    {projectTitle && (
+                      <h2 className="text-xl lg:text-2xl font-medium text-neutral-100 dark:text-neutral-900 leading-tight">
+                        {projectTitle}
+                      </h2>
+                    )}
+                    {projectDescription && (
+                      <p className="text-sm lg:text-base text-neutral-400 dark:text-neutral-600 leading-relaxed">
+                        {projectDescription}
+                      </p>
+                    )}
+                  </div>
                 </motion.div>
               )}
             </div>
