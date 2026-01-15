@@ -9,8 +9,8 @@ type ProjectType = "UI/UX" | "SOCIAL_MEDIA"
 
 const Works = () => {
   const t = useTranslations()
-  const [activeFilter, setActiveFilter] = useState<ProjectType>("UI/UX")
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [ activeFilter, setActiveFilter ] = useState<ProjectType>("UI/UX")
+  const [ isTransitioning, setIsTransitioning ] = useState(false)
 
   const filteredWorks = worksData.works.filter((work) => work.type === activeFilter)
 
@@ -18,7 +18,7 @@ const Works = () => {
     setIsTransitioning(true)
     const timer = setTimeout(() => setIsTransitioning(false), 500)
     return () => clearTimeout(timer)
-  }, [activeFilter])
+  }, [ activeFilter ])
 
   return (
     <section id="works" className="flex items-center justify-center py-4">
