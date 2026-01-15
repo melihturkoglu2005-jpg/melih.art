@@ -21,8 +21,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const messages = await getMessages()
 
   return (
-    // suppressHydrationWarning: Tarayıcı eklentilerinin HTML'e müdahale etmesinden kaynaklı hatayı çözer.
-    // lang={locale}: next-intl kullandığınız için dili dinamik hale getirdik.
     <html lang={locale} suppressHydrationWarning>
       <body className={`${rubik.className} antialiased bg-white dark:bg-black min-h-screen overflow-x-hidden`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
