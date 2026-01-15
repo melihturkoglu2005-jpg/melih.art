@@ -46,7 +46,7 @@ const Skills = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0 }}
                 whileInView={{
                   rotate: animations?.rotate,
                   x: animations?.x,

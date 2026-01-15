@@ -11,14 +11,20 @@ const Works = () => {
   const t = useTranslations()
   const [ activeFilter, setActiveFilter ] = useState<ProjectType>("UI/UX")
   const [ isTransitioning, setIsTransitioning ] = useState(false)
+  const [ isMounted, setIsMounted ] = useState(false)
 
   const filteredWorks = worksData.works.filter((work) => work.type === activeFilter)
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted) return
     setIsTransitioning(true)
     const timer = setTimeout(() => setIsTransitioning(false), 250)
     return () => clearTimeout(timer)
-  }, [ activeFilter ])
+  }, [ activeFilter, isMounted ])
 
   return (
     <section id="works" className="flex items-center justify-center py-4">
@@ -59,11 +65,11 @@ const Works = () => {
             return (
               <div
                 key={`${work.title}-${index}`}
-                className={`flex flex-col rounded-3xl border border-neutral-100 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 overflow-hidden transition-all duration-300 ease-out hover:shadow-lg hover:shadow-neutral-200/30 dark:hover:shadow-neutral-900/30 ${
-                  isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+                className={`flex flex-col rounded-3xl border border-neutral-100 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 overflow-hidden transition-opacity duration-300 ease-out hover:shadow-lg hover:shadow-neutral-200/30 dark:hover:shadow-neutral-900/30 ${
+                  isTransitioning ? "opacity-0" : "opacity-100"
                 }`}
                 style={{
-                  transitionDelay: `${index * 30}ms`
+                  transitionDelay: isTransitioning ? `${index * 30}ms` : "0ms"
                 }}
               >
                 <div className={`relative w-full ${aspectRatio} overflow-hidden`}>
