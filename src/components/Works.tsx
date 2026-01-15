@@ -10,10 +10,10 @@ type ProjectType = "UI/UX" | "SOCIAL_MEDIA"
 
 const Works = () => {
   const t = useTranslations()
-  const [ activeFilter, setActiveFilter ] = useState<ProjectType>("UI/UX")
-  const [ isTransitioning, setIsTransitioning ] = useState(false)
-  const [ isMounted, setIsMounted ] = useState(false)
-  const [ lightboxImage, setLightboxImage ] = useState<{ src: string; alt: string; title?: string; description?: string } | null>(null)
+  const [activeFilter, setActiveFilter] = useState<ProjectType>("SOCIAL_MEDIA")
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string; title?: string; description?: string } | null>(null)
 
   const filteredWorks = worksData.works.filter((work) => work.type === activeFilter)
 
@@ -26,7 +26,7 @@ const Works = () => {
     setIsTransitioning(true)
     const timer = setTimeout(() => setIsTransitioning(false), 250)
     return () => clearTimeout(timer)
-  }, [ activeFilter, isMounted ])
+  }, [activeFilter, isMounted])
 
   return (
     <section id="works" className="flex items-center justify-center py-4">
@@ -38,22 +38,22 @@ const Works = () => {
         {/* Filter Buttons */}
         <div className="flex items-center gap-3 mb-8 lg:mb-12">
           <button
-            onClick={() => setActiveFilter("UI/UX")}
-            className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === "UI/UX"
-              ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
-              : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-            }`}
-          >
-            {t("works_filter_uiux")}
-          </button>
-          <button
             onClick={() => setActiveFilter("SOCIAL_MEDIA")}
             className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === "SOCIAL_MEDIA"
               ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
               : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-            }`}
+              }`}
           >
-            {t("works_filter_social")}
+            Sosyal Medya
+          </button>
+          <button
+            onClick={() => setActiveFilter("UI/UX")}
+            className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === "UI/UX"
+              ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
+              : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+              }`}
+          >
+            UI/UX
           </button>
         </div>
 
@@ -66,7 +66,7 @@ const Works = () => {
               <div
                 key={`${work.title}-${index}`}
                 className={`flex flex-col rounded-3xl border border-neutral-100 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 overflow-hidden transition-opacity duration-300 ease-out hover:shadow-lg hover:shadow-neutral-200/30 dark:hover:shadow-neutral-900/30 ${isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
+                  }`}
                 style={{
                   transitionDelay: isTransitioning ? `${index * 30}ms` : "0ms"
                 }}
