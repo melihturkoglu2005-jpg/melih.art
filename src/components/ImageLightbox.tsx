@@ -24,7 +24,7 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescri
     return () => {
       document.body.style.overflow = ""
     }
-  }, [isOpen])
+  }, [ isOpen ])
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -40,7 +40,7 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescri
     return () => {
       window.removeEventListener("keydown", handleEscape)
     }
-  }, [isOpen, onClose])
+  }, [ isOpen, onClose ])
 
   return (
     <AnimatePresence>
