@@ -4,37 +4,43 @@
       "title": "Yemek Sipariş Uygulaması",
       "description": "Bu kullanıcı arayüzü (UI) çalışmasında, kullanıcı dostu bir deneyim (UX) ile modern estetiği birleştirmeyi hedefledim. Canlı renk paleti ve temiz kart tasarımları sayesinde kullanıcının yemek seçme ve sipariş verme sürecini en akıcı hale getirdim.",
       "image": "/images/works/foodapp.png",
-      "link": "https://melih.work"
+      "link": "https://melih.work",
+      "type": "UI/UX"
     },
     {
       "title": "Dijital Cüzdan ve Finans Yönetimi",
       "description": "Bu çalışmada, karmaşık finansal verileri kullanıcı için anlaşılır ve estetik bir arayüze dönüştürmeyi amaçladım. Dark Mode (Karanlık Tema) tercihiyle premium bir his yaratırken, mor ve neon vurgularla modern fintech dünyasının dinamizmini yansıttım.",
       "image": "/images/works/cuzdan.png",
-      "link": "https://melih.work"
+      "link": "https://melih.work",
+      "type": "UI/UX"
     },
     {
       "title": "Seyahat Planlama Uygulaması",
       "description": "Kişiye özel seyahat önerilerini keşfetmeyi sağlayan bir mobil uygulama. Popüler turları, yeni rotaları, şehir rehberlerini ve detaylı gezi bilgilerini görüntüleyin. Mesafe, süre, sıcaklık ve kullanıcı puanlarını inceleyin",
       "image": "/images/works/travelapp.png",
-      "link": "https://melih.work"
+      "link": "https://melih.work",
+      "type": "UI/UX"
     },
     {
       "title": "Pizza Sosyal Medya Tasarımı",
       "description": "Pizza markaları için sosyal medya post tasarımı. 🌿🍕 Bu tasarımda, 'saf İtalyan keyfi' mesajını desteklemek amacıyla ürün, taze içeriklerin doğal ortamıyla birleştirilmiştir.",
       "image": "/images/works/pizza.png",
-      "link": "https://melih.work"
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
     },
     {
       "title": "Sıcak Çikolata Kampanyası",
       "description": "Bu çalışmada kış mevsiminin huzurunu ve yılbaşının coşkusunu birleştirmeyi hedefledim. Tasarımda ürünün 'iç ısıtan' etkisini vurgulamak için doğal elementler ile yılbaşı sembollerini harmanladım.",
       "image": "/images/works/sicakcikolata.png",
-      "link": "https://melih.work"
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
     },
     {
       "title": "Çilekli Matcha: Bir Doğa Masalı",
       "description": "Bu çalışmada, ürünün doğal ve ferahlatıcı içeriğini vurgulamak için 'mikro dünya' konsepti kullanılmıştır. İçecek, masalsı bir bahçenin merkezine yerleştirilerek bir hikaye oluşturulmuştur.",
       "image": "/images/works/matcha.png",
-      "link": "https://melih.work"
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
     }
   ]
 }

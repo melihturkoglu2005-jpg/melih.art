@@ -6,7 +6,10 @@ import { Rubik } from "next/font/google"
 import ThemeProvider from "../components/ThemeProvider"
 import "../styles/globals.css"
 
-const rubik = Rubik({ subsets: [ "latin" ], weight: [ "300", "400", "500", "600", "700", "800", "900" ] })
+const rubik = Rubik({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"]
+})
 
 export const metadata: Metadata = {
   title: "Melih Türkoğlu",
@@ -18,15 +21,17 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const messages = await getMessages()
 
   return (
-    <html lang="en">
+    // suppressHydrationWarning: Tarayıcı eklentilerinin HTML'e müdahale etmesinden kaynaklı hatayı çözer.
+    // lang={locale}: next-intl kullandığınız için dili dinamik hale getirdik.
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${rubik.className} antialiased bg-white dark:bg-black min-h-screen overflow-x-hidden`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   )
 }
