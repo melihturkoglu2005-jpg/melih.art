@@ -72,11 +72,11 @@ const Navbar = () => {
                           <motion.div
                             layoutId="activeNavBackground"
                             className="absolute inset-0 border border-neutral-100 dark:border-neutral-900 rounded-full"
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 35 }}
                           />
                         )}
                         <span className={clsx(
-                          "relative z-10 text-[0.938rem] transition-colors",
+                          "relative z-10 text-[0.938rem] transition-colors duration-200 ease-out",
                           isActive
                             ? "text-neutral-950 dark:text-neutral-100"
                             : "text-neutral-500 dark:text-neutral-400"
@@ -93,11 +93,11 @@ const Navbar = () => {
             <li>
               <button
                 onClick={toggleTheme}
-                className="relative w-12 h-6 flex items-center bg-white border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-900 rounded-full transition-all"
+                className="relative w-12 h-6 flex items-center bg-white border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-900 rounded-full transition-colors duration-200 ease-out"
               >
                 <div
                   className={clsx(
-                    "absolute left-px flex items-center justify-center size-5 bg-neutral-50 dark:bg-neutral-950 rounded-full transition-all",
+                    "absolute left-px flex items-center justify-center size-5 bg-neutral-50 dark:bg-neutral-950 rounded-full transition-transform duration-200 ease-out",
                     { "translate-x-6": theme === "dark" }
                   )}
                 >

@@ -36,9 +36,9 @@ const Skills = () => {
             }[index]
 
             const desktopAnimations = {
-              0: { rotate: -6, x: 64, y: 0 },
-              1: { rotate: 6, x: -64, y: 96 },
-              2: { rotate: 3, x: -128, y: 0 }
+              0: { rotate: -3, x: 32, y: 0 },
+              1: { rotate: 3, x: -32, y: 24 },
+              2: { rotate: 2, x: -48, y: 0 }
             }[index]
 
             const animations = isMobile ? { rotate: 0, x: 0, y: 0 } : desktopAnimations
@@ -46,19 +46,19 @@ const Skills = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ rotate: 0, x: -10, y: -10, opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{
                   rotate: animations?.rotate,
                   x: animations?.x,
                   y: animations?.y,
                   opacity: 1
                 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{
                   type: "spring",
-                  stiffness: 100,
-                  damping: 20,
-                  delay: index * 0.2
+                  stiffness: 150,
+                  damping: 25,
+                  delay: index * 0.1
                 }}
                 className={clsx(
                   "h-fit w-80 border border-neutral-200 rounded-xl overflow-hidden dark:border-neutral-800",

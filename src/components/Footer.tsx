@@ -26,7 +26,7 @@ const Footer = () => {
               <IconSparkles className="fill-yellow-400 stroke-yellow-400 dark:fill-yellow-500 dark:stroke-yellow-500 size-9 hidden lg:block" />
             </span>
           </h2>
-          <Link href={`mailto:${email}`} className="flex items-center justify-center gap-2 px-6 py-4 min-w-20 bg-neutral-900 hover:bg-neutral-950 text-white dark:bg-neutral-50 hover:dark:bg-neutral-100 dark:text-neutral-950 rounded-full transition-all">
+          <Link href={`mailto:${email}`} className="flex items-center justify-center gap-2 px-6 py-4 min-w-20 bg-neutral-900 hover:bg-neutral-950 text-white dark:bg-neutral-50 hover:dark:bg-neutral-100 dark:text-neutral-950 rounded-full transition-colors duration-200 ease-out">
             <span className="text-base lg:text-xl">{t("footer_btn_email")}</span>
             <IconMoveRight className="size-6 lg:size-7" />
           </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
                 }[item.platform.toLocaleLowerCase()]
 
                 return (
-                  <Link key={index} href={item.link} target="_blank" title={item.platform} className="border size-9 lg:size-10 flex items-center justify-center rounded-xl text-neutral-800 border-neutral-300 hover:bg-neutral-50 dark:text-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-900 transition-all">
+                  <Link key={index} href={item.link} target="_blank" title={item.platform} className="border size-9 lg:size-10 flex items-center justify-center rounded-xl text-neutral-800 border-neutral-300 hover:bg-neutral-50 dark:text-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-900 transition-colors duration-200 ease-out">
                     {icon}
                   </Link>
                 )

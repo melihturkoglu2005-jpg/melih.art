@@ -27,29 +27,29 @@ const Hero = () => {
       icon: <IconType className="size-7" />,
       label: t("hero_term_1"),
       className: "rotate-2 right-12 top-0 from-lime-200 to-lime-300 text-lime-700 dark:from-lime-300 dark:to-lime-500 dark:text-lime-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 1000 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -1000 ])
+      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 120 ]),
+      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -80 ])
     },
     {
       icon: <IconMonitorSmartPhone className="size-7" />,
       label: t("hero_term_2"),
       className: "rotate-3 right-28 top-16 from-sky-200 to-sky-300 text-sky-700 dark:from-sky-300 dark:to-sky-500 dark:text-sky-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -1200 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 800 ])
+      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -100 ]),
+      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 60 ])
     },
     {
       icon: <IconGlobe className="size-7" />,
       label: t("hero_term_3"),
       className: "-rotate-6 right-0 top-14 from-yellow-200 to-yellow-300 text-yellow-700 dark:from-yellow-300 dark:to-yellow-500 dark:text-yellow-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 900 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 1100 ])
+      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 80 ]),
+      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 100 ])
     },
     {
       icon: <IconVariable className="size-7" />,
       label: t("hero_term_4"),
       className: "rotate-6 right-28 top-8 from-purple-200 to-purple-300 text-purple-700 dark:from-purple-300 dark:to-purple-500 dark:text-purple-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -900 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -1100 ])
+      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -90 ]),
+      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -70 ])
     }
   ]
 
@@ -66,7 +66,7 @@ const Hero = () => {
           <h1 className="text-3xl lg:text-5xl lg:leading-[1.2] font-medium">{t("hero_description")}</h1>
           <div className="flex justify-between">
             <div className="flex items-center gap-2 mt-6 lg:mt-8">
-              <Link href={`mailto:${email}`} className="flex items-center justify-center gap-2 px-5 py-3 lg:px-6 lg:py-4 min-w-20 hover:bg-neutral-100 hover:dark:bg-neutral-900 border border-neutral-950 dark:border-neutral-100 rounded-full transition-all">
+              <Link href={`mailto:${email}`} className="flex items-center justify-center gap-2 px-5 py-3 lg:px-6 lg:py-4 min-w-20 hover:bg-neutral-100 hover:dark:bg-neutral-900 border border-neutral-950 dark:border-neutral-100 rounded-full transition-colors duration-200 ease-out">
                 <span className="text-base lg:text-xl">{t("hero_btn_email")}</span>
                 <IconMoveRight className="size-5 lg:size-7" />
               </Link>
