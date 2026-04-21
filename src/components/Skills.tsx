@@ -1,77 +1,82 @@
 "use client"
 
 import skillsData from "@/data/skills.json"
+import clsx from "clsx"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
-
-const skillCardColors = [
-  {
-    header: "bg-gradient-to-r from-lime-300 to-lime-200 dark:from-lime-500 dark:to-lime-400",
-    headerText: "text-lime-900",
-    border: "border-lime-200 dark:border-lime-700",
-    dot: "bg-lime-400 dark:bg-lime-500"
-  },
-  {
-    header: "bg-gradient-to-r from-purple-300 to-purple-200 dark:from-purple-500 dark:to-purple-400",
-    headerText: "text-purple-900",
-    border: "border-purple-200 dark:border-purple-700",
-    dot: "bg-purple-400 dark:bg-purple-500"
-  },
-  {
-    header: "bg-gradient-to-r from-sky-300 to-sky-200 dark:from-sky-500 dark:to-sky-400",
-    headerText: "text-sky-900",
-    border: "border-sky-200 dark:border-sky-700",
-    dot: "bg-sky-400 dark:bg-sky-500"
-  }
-]
+import { useEffect, useState } from "react"
 
 const Skills = () => {
   const t = useTranslations()
+  const [ isMobile, setIsMobile ] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024)
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   return (
     <section id="skills" className="flex items-center justify-center py-4">
-      <div className="container flex flex-col items-center justify-center py-12 px-2 lg:pt-24 lg:pb-32">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl lg:text-5xl lg:leading-[1] font-semibold text-center w-5/6 lg:w-3/6 mb-12 lg:mb-16 tracking-tight"
-        >
+      <div className="container flex flex-col items-center justify-center py-8 px-2 lg:pt-28 lg:pb-56">
+        <h2 className="text-3xl lg:text-5xl lg:leading-[1] font-medium text-center w-4/6 lg:w-3/6 mb-10">
           {t("skills_title")}
-        </motion.h2>
-
-        {/* Grid layout — no overlapping */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 w-full max-w-4xl">
+        </h2>
+        <div className="flex items-center justify-center lg:translate-x-12 lg:flex-row flex-col lg:gap-0 gap-6">
           {skillsData.skills.map((category, index) => {
-            const colors = skillCardColors[index] ?? skillCardColors[0]
+            const styles = {
+              0: "from-lime-300 to-lime-50 text-lime-800 z-0 dark:from-lime-600 dark:to-lime-300 dark:text-lime-900",
+              1: "from-purple-300 to-purple-50 text-purple-800 z-[1] dark:from-purple-600 dark:to-purple-300 dark:text-purple-900",
+              2: "from-sky-300 to-sky-50 text-sky-800 z-[2] dark:from-sky-600 dark:to-sky-300 dark:text-sky-900"
+            }[index]
+
+            const desktopAnimations = {
+              0: { rotate: -3, x: 32, y: 0 },
+              1: { rotate: 3, x: -32, y: 24 },
+              2: { rotate: 2, x: -48, y: 0 }
+            }[index]
+
+            const animations = isMobile ? { rotate: 0, x: 0, y: 0 } : desktopAnimations
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.45, delay: index * 0.1, ease: "easeOut" }}
-                className={`rounded-2xl border overflow-hidden bg-white dark:bg-neutral-950 shadow-sm ${colors.border}`}
+                initial={{ opacity: 0 }}
+                whileInView={{
+                  rotate: animations?.rotate,
+                  x: animations?.x,
+                  y: animations?.y,
+                  opacity: 1
+                }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 150,
+                  damping: 25,
+                  delay: index * 0.1
+                }}
+                className={clsx(
+                  "h-fit w-80 border border-neutral-200 rounded-xl overflow-hidden dark:border-neutral-800",
+                  styles
+                )}
               >
-                {/* Card header */}
-                <div className={`flex items-center gap-2 px-5 py-3.5 ${colors.header}`}>
-                  <span className={`w-2 h-2 rounded-full ${colors.dot}`} />
-                  <p className={`font-semibold text-sm tracking-wide ${colors.headerText}`}>{category.title}</p>
+                <div className="flex items-center justify-center bg-gradient-to-r w-full py-2">
+                  <p>{category.title}</p>
                 </div>
-                {/* Skill list */}
-                <ul className="divide-y divide-neutral-100 dark:divide-neutral-900">
-                  {category.skills.map((skill, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center gap-2.5 px-5 py-3 text-sm lg:text-base text-neutral-700 dark:text-neutral-300"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-neutral-300 dark:bg-neutral-700 shrink-0" />
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
+                <div className="w-full bg-white dark:bg-neutral-950">
+                  <ul className="lg:text-lg text-neutral-950 dark:text-neutral-100">
+                    {category.skills.map((skill, i) => (
+                      <li key={i} className="py-2 px-4 border-b border-neutral-200 dark:border-neutral-800 last:border-0">
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.div>
             )
           })}

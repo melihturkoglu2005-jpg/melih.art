@@ -2,7 +2,6 @@
   "hero_hello": "Merhaba, ben Melih Türkoğlu.",
   "hero_description": "Fikirleri, etkileyici tasarıma dönüştürüyorum.",
   "hero_btn_email": "İletişime Geç",
-  "hero_btn_cv": "CV İndir",
   "hero_term_1": "wireframing",
   "hero_term_2": "responsive",
   "hero_term_3": "prototype",
@@ -16,7 +15,6 @@
   "footer_ready_title": "Fikirlerinizi hayata geçirmeye hazır mısınız?",
   "footer_build_title": "Birlikte harika işler yaratalım.",
   "footer_btn_email": "Bana Ulaş",
-  "footer_btn_cv": "CV İndir",
   "footer_connect": "İletişim",
   "footer_social": "Sosyal"
 }

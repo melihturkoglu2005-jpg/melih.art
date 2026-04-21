@@ -10,7 +10,6 @@ interface IProfileStore {
   email: string;
   fullName: string;
   avatar: string;
-  cvLink: string;
   social: ISocial[];
 }
 
@@ -19,7 +18,6 @@ export const useProfileStore = create<IProfileStore>(() => {
     email: profileData.profile.email,
     fullName: profileData.profile.full_name,
     avatar: profileData.profile.avatar,
-    cvLink: profileData.profile.cv_link,
     social: profileData.profile.social
   }
 })
