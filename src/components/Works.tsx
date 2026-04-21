@@ -32,7 +32,7 @@ const Works = () => {
 
   const filters: { label: string; value: ProjectType }[] = [
     { label: "UI/UX", value: "UI/UX" },
-    { label: "Sosyal Medya", value: "SOCIAL_MEDIA" },
+    { label: "Sosyal Medya", value: "SOCIAL_MEDIA" }
   ]
 
   return (

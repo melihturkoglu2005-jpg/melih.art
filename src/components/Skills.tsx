@@ -9,20 +9,20 @@ const skillCardColors = [
     header: "bg-gradient-to-r from-lime-300 to-lime-200 dark:from-lime-500 dark:to-lime-400",
     headerText: "text-lime-900",
     border: "border-lime-200 dark:border-lime-700",
-    dot: "bg-lime-400 dark:bg-lime-500",
+    dot: "bg-lime-400 dark:bg-lime-500"
   },
   {
     header: "bg-gradient-to-r from-purple-300 to-purple-200 dark:from-purple-500 dark:to-purple-400",
     headerText: "text-purple-900",
     border: "border-purple-200 dark:border-purple-700",
-    dot: "bg-purple-400 dark:bg-purple-500",
+    dot: "bg-purple-400 dark:bg-purple-500"
   },
   {
     header: "bg-gradient-to-r from-sky-300 to-sky-200 dark:from-sky-500 dark:to-sky-400",
     headerText: "text-sky-900",
     border: "border-sky-200 dark:border-sky-700",
-    dot: "bg-sky-400 dark:bg-sky-500",
-  },
+    dot: "bg-sky-400 dark:bg-sky-500"
+  }
 ]
 
 const Skills = () => {

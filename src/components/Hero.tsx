@@ -56,7 +56,7 @@ const Hero = () => {
     { icon: <IconType className="size-4" />, label: t("hero_term_1"), className: "from-lime-200 to-lime-300 text-lime-700 dark:from-lime-300 dark:to-lime-500 dark:text-lime-900" },
     { icon: <IconMonitorSmartPhone className="size-4" />, label: t("hero_term_2"), className: "from-sky-200 to-sky-300 text-sky-700 dark:from-sky-300 dark:to-sky-500 dark:text-sky-900" },
     { icon: <IconGlobe className="size-4" />, label: t("hero_term_3"), className: "from-yellow-200 to-yellow-300 text-yellow-700 dark:from-yellow-300 dark:to-yellow-500 dark:text-yellow-900" },
-    { icon: <IconVariable className="size-4" />, label: t("hero_term_4"), className: "from-purple-200 to-purple-300 text-purple-700 dark:from-purple-300 dark:to-purple-500 dark:text-purple-900" },
+    { icon: <IconVariable className="size-4" />, label: t("hero_term_4"), className: "from-purple-200 to-purple-300 text-purple-700 dark:from-purple-300 dark:to-purple-500 dark:text-purple-900" }
   ]
 
   return (
