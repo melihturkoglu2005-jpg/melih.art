@@ -6,7 +6,7 @@ const nextConfig = {
   webpack(config: any) {
     config.module.rules.push({
       test: /\.svg$/i,
-      use: ["@svgr/webpack"]
+      use: [ "@svgr/webpack" ]
     })
 
     return config
@@ -16,7 +16,7 @@ const nextConfig = {
     root: __dirname,
     rules: {
       "*.svg": {
-        loaders: ["@svgr/webpack"],
+        loaders: [ "@svgr/webpack" ],
         as: "*.js"
       }
     }

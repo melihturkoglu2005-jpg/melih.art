@@ -10,11 +10,11 @@ type ProjectType = "UI/UX" | "SOCIAL_MEDIA"
 
 const Works = () => {
   const t = useTranslations()
-  const [activeFilter, setActiveFilter] = useState<ProjectType>("SOCIAL_MEDIA")
-  const [isTransitioning, setIsTransitioning] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
-  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null)
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [ activeFilter, setActiveFilter ] = useState<ProjectType>("SOCIAL_MEDIA")
+  const [ isTransitioning, setIsTransitioning ] = useState(false)
+  const [ isMounted, setIsMounted ] = useState(false)
+  const [ lightboxImage, setLightboxImage ] = useState<{ src: string; alt: string } | null>(null)
+  const [ hoveredIndex, setHoveredIndex ] = useState<number | null>(null)
 
   const filteredWorks = worksData.works.filter((work) => work.type === activeFilter)
 
@@ -27,7 +27,7 @@ const Works = () => {
     setIsTransitioning(true)
     const timer = setTimeout(() => setIsTransitioning(false), 300)
     return () => clearTimeout(timer)
-  }, [activeFilter, isMounted])
+  }, [ activeFilter, isMounted ])
 
   return (
     <section id="works" className="flex items-center justify-center py-4">
@@ -39,14 +39,13 @@ const Works = () => {
 
         {/* Filter Buttons */}
         <div className="flex items-center gap-2 mb-10 lg:mb-14 p-1 rounded-full bg-neutral-100 dark:bg-neutral-900">
-          {(["SOCIAL_MEDIA", "UI/UX"] as ProjectType[]).map((filter) => (
+          {([ "SOCIAL_MEDIA", "UI/UX" ] as ProjectType[]).map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-5 py-2.5 rounded-full text-sm lg:text-base font-medium transition-all duration-250 ease-out ${
-                activeFilter === filter
-                  ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-sm"
-                  : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200"
+              className={`px-5 py-2.5 rounded-full text-sm lg:text-base font-medium transition-all duration-250 ease-out ${activeFilter === filter
+                ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-sm"
+                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200"
               }`}
             >
               {filter === "SOCIAL_MEDIA" ? "Sosyal Medya" : "UI/UX"}
@@ -63,8 +62,7 @@ const Works = () => {
             return (
               <div
                 key={`${work.title}-${index}`}
-                className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ease-out ${
-                  isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+                className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ease-out ${isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
                 }`}
                 style={{ transitionDelay: isTransitioning ? `${index * 40}ms` : `${index * 20}ms` }}
                 onClick={() => setLightboxImage({ src: work.image, alt: work.title })}
@@ -83,15 +81,13 @@ const Works = () => {
 
                   {/* Gradient overlay */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent transition-opacity duration-300 ease-out ${
-                      isHovered ? "opacity-100" : "opacity-60"
+                    className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent transition-opacity duration-300 ease-out ${isHovered ? "opacity-100" : "opacity-60"
                     }`}
                   />
 
                   {/* Title pinned to bottom */}
                   <div
-                    className={`absolute bottom-0 left-0 right-0 p-5 lg:p-6 transition-all duration-300 ease-out ${
-                      isHovered ? "translate-y-0 opacity-100" : "translate-y-1 opacity-90"
+                    className={`absolute bottom-0 left-0 right-0 p-5 lg:p-6 transition-all duration-300 ease-out ${isHovered ? "translate-y-0 opacity-100" : "translate-y-1 opacity-90"
                     }`}
                   >
                     <h3 className="text-base lg:text-lg font-medium text-white leading-snug drop-shadow-sm">
@@ -101,8 +97,7 @@ const Works = () => {
 
                   {/* Expand icon */}
                   <div
-                    className={`absolute top-4 right-4 p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 ease-out ${
-                      isHovered ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                    className={`absolute top-4 right-4 p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 ease-out ${isHovered ? "opacity-100 scale-100" : "opacity-0 scale-90"
                     }`}
                   >
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
