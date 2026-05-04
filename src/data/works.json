@@ -36,13 +36,6 @@
       "type": "UI/UX"
     },
     {
-      "title": "Zey Glass Lara Park",
-      "description": "Teknik detayları minimalist bir tipografiyle harmanlayarak, sosyal medya akışında kurumsal prestiji ve modern mimari estetiği ön plana çıkaran bir görsel dil kurgulanmıştır.",
-      "image": "/images/works/zeyglass1.png",
-      "link": "https://melih.work",
-      "type": "SOCIAL_MEDIA"
-    },
-    {
       "title": "Sıcak Çikolata Kampanyası",
       "description": "Bu çalışmada kış mevsiminin huzurunu ve yılbaşının coşkusunu birleştirmeyi hedefledim. Tasarımda ürünün 'iç ısıtan' etkisini vurgulamak için doğal elementler ile yılbaşı sembollerini harmanladım.",
       "image": "/images/works/sicakcikolata.jpg",
@@ -60,6 +53,13 @@
       "title": "Oppi 14 Şubat",
       "description": "Dijital bir finans markasının logosunu duygusal bir hikaye anlatımıyla somutlaştırarak, şık ve kampanya odaklı bir tasarım yapılmıştır.",
       "image": "/images/works/oppi2.png",
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
+    },
+    {
+      "title": "Zey Glass Lara Park",
+      "description": "Teknik detayları minimalist bir tipografiyle harmanlayarak, sosyal medya akışında kurumsal prestiji ve modern mimari estetiği ön plana çıkaran bir görsel dil kurgulanmıştır.",
+      "image": "/images/works/zeyglass1.png",
       "link": "https://melih.work",
       "type": "SOCIAL_MEDIA"
     },
