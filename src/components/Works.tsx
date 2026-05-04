@@ -40,7 +40,7 @@ const Works = () => {
         <div className="flex items-center gap-3 mb-8 lg:mb-12">
           {([
             "SOCIAL_MEDIA",
-            "UI/UX",
+            "UI/UX"
           ] as ProjectType[]).map((filter) => (
             <button
               key={filter}
