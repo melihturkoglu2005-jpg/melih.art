@@ -1,6 +1,6 @@
 import createNextIntlPlugin from "next-intl/plugin"
 
-const withNextIntl = createNextIntlPlugin("./i18n/request.ts")
+const withNextIntl = createNextIntlPlugin()
 
 const nextConfig = {
   webpack(config: any) {
@@ -12,12 +12,13 @@ const nextConfig = {
     return config
   },
 
-  turbopack: {
-    root: __dirname,
-    rules: {
-      "*.svg": {
-        loaders: [ "@svgr/webpack" ],
-        as: "*.js"
+  experimental: {
+    turbo: {
+      rules: {
+        "*.svg": {
+          loaders: [ "@svgr/webpack" ],
+          as: "*.js"
+        }
       }
     }
   }
