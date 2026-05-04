@@ -10,10 +10,11 @@ type ProjectType = "UI/UX" | "SOCIAL_MEDIA"
 
 const Works = () => {
   const t = useTranslations()
-  const [ activeFilter, setActiveFilter ] = useState<ProjectType>("SOCIAL_MEDIA")
-  const [ isTransitioning, setIsTransitioning ] = useState(false)
-  const [ isMounted, setIsMounted ] = useState(false)
-  const [ lightboxImage, setLightboxImage ] = useState<{ src: string; alt: string; title?: string; description?: string } | null>(null)
+  const [activeFilter, setActiveFilter] = useState<ProjectType>("SOCIAL_MEDIA")
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   const filteredWorks = worksData.works.filter((work) => work.type === activeFilter)
 
@@ -26,7 +27,7 @@ const Works = () => {
     setIsTransitioning(true)
     const timer = setTimeout(() => setIsTransitioning(false), 250)
     return () => clearTimeout(timer)
-  }, [ activeFilter, isMounted ])
+  }, [activeFilter, isMounted])
 
   return (
     <section id="works" className="flex items-center justify-center py-4">
@@ -37,24 +38,18 @@ const Works = () => {
 
         {/* Filter Buttons */}
         <div className="flex items-center gap-3 mb-8 lg:mb-12">
-          <button
-            onClick={() => setActiveFilter("SOCIAL_MEDIA")}
-            className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === "SOCIAL_MEDIA"
-              ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
-              : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-            }`}
-          >
-            Sosyal Medya
-          </button>
-          <button
-            onClick={() => setActiveFilter("UI/UX")}
-            className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === "UI/UX"
-              ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
-              : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-            }`}
-          >
-            UI/UX
-          </button>
+          {(["SOCIAL_MEDIA", "UI/UX"] as ProjectType[]).map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === filter
+                  ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
+                  : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+                }`}
+            >
+              {filter === "SOCIAL_MEDIA" ? "Sosyal Medya" : "UI/UX"}
+            </button>
+          ))}
         </div>
 
         {/* Works Grid */}
@@ -65,35 +60,35 @@ const Works = () => {
             return (
               <div
                 key={`${work.title}-${index}`}
-                className={`flex flex-col rounded-3xl border border-neutral-100 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 overflow-hidden transition-opacity duration-300 ease-out hover:shadow-lg hover:shadow-neutral-200/30 dark:hover:shadow-neutral-900/30 ${isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
-                style={{
-                  transitionDelay: isTransitioning ? `${index * 30}ms` : "0ms"
-                }}
+                className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ease-out ${isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+                  }`}
+                style={{ transitionDelay: isTransitioning ? `${index * 40}ms` : `${index * 20}ms` }}
+                onClick={() => setLightboxImage({ src: work.image, alt: work.title })}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div
-                  className={`relative w-full ${aspectRatio} overflow-hidden cursor-pointer`}
-                  onClick={() => setLightboxImage({
-                    src: work.image,
-                    alt: work.title,
-                    title: work.title,
-                    description: work.description
-                  })}
-                >
+                {/* Image */}
+                <div className={`relative w-full ${aspectRatio} overflow-hidden`}>
                   <Image
                     src={work.image}
                     alt={work.title}
-                    className="object-cover transition-transform duration-300 ease-out hover:scale-[1.03]"
+                    className={`object-cover transition-transform duration-500 ease-out ${hoveredIndex === index ? "scale-[1.05]" : "scale-100"
+                      }`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                </div>
-                <div className="flex flex-col p-5 lg:p-6">
-                  <h3 className="text-xl lg:text-2xl mb-2 font-medium transition-colors duration-200 ease-out hover:text-neutral-900 dark:hover:text-neutral-100">
-                    {work.title}
-                  </h3>
-                  <p className="text-sm lg:text-base text-neutral-500 dark:text-neutral-400 line-clamp-3">
-                    {work.description}
-                  </p>
+
+                  {/* Title overlay - only visible on hover */}
+                  <div
+                    className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ease-out flex items-end ${hoveredIndex === index ? "opacity-100" : "opacity-0"
+                      }`}
+                  >
+                    <div className="p-5 lg:p-6 w-full">
+                      <h3 className="text-base lg:text-lg font-medium text-white leading-snug">
+                        {work.title}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
               </div>
             )
@@ -105,8 +100,6 @@ const Works = () => {
         isOpen={lightboxImage !== null}
         imageSrc={lightboxImage?.src || ""}
         imageAlt={lightboxImage?.alt || ""}
-        projectTitle={lightboxImage?.title}
-        projectDescription={lightboxImage?.description}
         onClose={() => setLightboxImage(null)}
       />
     </section>

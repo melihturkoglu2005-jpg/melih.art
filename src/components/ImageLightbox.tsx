@@ -8,12 +8,10 @@ interface ImageLightboxProps {
   isOpen: boolean
   imageSrc: string
   imageAlt: string
-  projectTitle?: string
-  projectDescription?: string
   onClose: () => void
 }
 
-const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescription, onClose }: ImageLightboxProps) => {
+const ImageLightbox = ({ isOpen, imageSrc, imageAlt, onClose }: ImageLightboxProps) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
@@ -24,7 +22,7 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescri
     return () => {
       document.body.style.overflow = ""
     }
-  }, [ isOpen ])
+  }, [isOpen])
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -40,7 +38,7 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescri
     return () => {
       window.removeEventListener("keydown", handleEscape)
     }
-  }, [ isOpen, onClose ])
+  }, [isOpen, onClose])
 
   return (
     <AnimatePresence>
@@ -72,44 +70,18 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, projectTitle, projectDescri
               </svg>
             </button>
 
-            <div className="w-full h-full max-w-7xl max-h-[85vh] flex flex-col">
+            <div className="w-full h-full max-w-7xl max-h-[85vh] flex items-center justify-center">
               {/* Image Container */}
-              <div className="flex-1 relative min-h-0">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-900/20 dark:bg-neutral-100/5">
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    fill
-                    className="object-contain"
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                  />
-                </div>
+              <div className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-900/20 dark:bg-neutral-100/5">
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  fill
+                  className="object-contain"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                />
               </div>
-
-              {/* Project Info */}
-              {(projectTitle || projectDescription) && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.15 }}
-                  className="w-full pt-6 lg:pt-8 px-2 lg:px-0"
-                >
-                  <div className="max-w-3xl mx-auto space-y-3">
-                    {projectTitle && (
-                      <h2 className="text-xl lg:text-2xl font-medium text-neutral-100 dark:text-neutral-900 leading-tight">
-                        {projectTitle}
-                      </h2>
-                    )}
-                    {projectDescription && (
-                      <p className="text-sm lg:text-base text-neutral-400 dark:text-neutral-600 leading-relaxed">
-                        {projectDescription}
-                      </p>
-                    )}
-                  </div>
-                </motion.div>
-              )}
             </div>
           </motion.div>
         </motion.div>
