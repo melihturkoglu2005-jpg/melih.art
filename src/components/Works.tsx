@@ -38,13 +38,16 @@ const Works = () => {
 
         {/* Filter Buttons */}
         <div className="flex items-center gap-3 mb-8 lg:mb-12">
-          {(["SOCIAL_MEDIA", "UI/UX"] as ProjectType[]).map((filter) => (
+          {([
+            "SOCIAL_MEDIA",
+            "UI/UX",
+          ] as ProjectType[]).map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === filter
-                  ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
-                  : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+                ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
+                : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
                 }`}
             >
               {filter === "SOCIAL_MEDIA" ? "Sosyal Medya" : "UI/UX"}
