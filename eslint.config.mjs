@@ -35,8 +35,7 @@ export default [
       "react/prop-types": "off",
       "react/no-unescaped-entities": "off",
       "object-curly-spacing": [ "error", "always" ],
-      "array-bracket-spacing": "off",
-      "no-multi-spaces": "off",
+      "array-bracket-spacing": [ "error", "always" ],
       "space-infix-ops": [ "error", { int32Hint: false } ],
       "space-in-parens": [ "error", "never" ],
       "space-before-blocks": [ "error", "always" ]

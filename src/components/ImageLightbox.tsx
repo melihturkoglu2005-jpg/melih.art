@@ -15,7 +15,7 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, onClose }: ImageLightboxPro
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : ""
     return () => { document.body.style.overflow = "" }
-  }, [ isOpen ])
+  }, [isOpen])
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -23,7 +23,7 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, onClose }: ImageLightboxPro
     }
     if (isOpen) window.addEventListener("keydown", handleEscape)
     return () => window.removeEventListener("keydown", handleEscape)
-  }, [ isOpen, onClose ])
+  }, [isOpen, onClose])
 
   return (
     <AnimatePresence>
@@ -56,11 +56,11 @@ const ImageLightbox = ({ isOpen, imageSrc, imageAlt, onClose }: ImageLightboxPro
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.94 }}
-            transition={{ duration: 0.3, ease: [ 0.16, 1, 0.3, 1 ] }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full h-full p-6 md:p-10 flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative w-full h-full max-w-6xl max-h-[ 90vh ]">
+            <div className="relative w-full h-full max-w-6xl max-h-[90vh]">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
