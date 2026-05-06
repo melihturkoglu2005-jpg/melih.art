@@ -8,6 +8,27 @@
       "type": "UI/UX"
     },
     {
+      "title": "Trippica Yaklaşan Etkinlikler",
+      "description": "Gezgin ruhunu ve global erişimi simgeleyen bulut temalı arka plan, net tipografik hiyerarşiyle birleştirilerek etkinlik takvimi içeriği kolayca taranabilir hale getirilmiştir. Alt kısımda kullanılan yırtık kağıt dokusu ve kurumsal CTA (eyleme çağrı) butonları, dijital bir markanın modern ve dinamik sosyal medya estetiğini yansıtmaktadır.",
+      "image": "/images/works/trippica1.png",
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
+    },
+    {
+      "title": "Dijital Finans Kontrolü: Flux",
+      "description": "Bu çalışmada karanlık arayüz ve net tipografiyle kontrol duygusunu güçlendirmeyi hedefledim. Akışkan geçişler ve sade hiyerarşi sayesinde tasarımı modern, güven veren ve odaklanmayı kolaylaştıran bir yapıda kurguladım 🌑✨.",
+      "image": "/images/works/flux1.png",
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
+    },
+    {
+      "title": "Sunify Sosyal Medya Tasarımı",
+      "description": "Bu çalışmada aracın serin kalmasını sağlarken aynı anda temiz enerji üretme fikrini ön plana çıkarmak için modern mimari çizgileri güneş panelleriyle bütünleştirdim ☀️. Güneşten korunma ve güneşle şarj olma fikrini tek bir yapı altında toplayarak, otopark alanını pasif bir alan olmaktan çıkarıp aktif bir enerji kaynağı olarak konumlandırdım ⚡🚗.",
+      "image": "/images/works/sunify1.png",
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
+    },
+    {
       "title": "Zey Glass Nass Hospital",
       "description": "Teknik detayları minimalist bir tipografiyle harmanlayarak, sosyal medya akışında kurumsal prestiji ve modern mimari estetiği ön plana çıkaran bir görsel dil kurgulanmıştır.",
       "image": "/images/works/zeyglass3.png",
@@ -20,6 +41,13 @@
       "image": "/images/works/cuzdan.png",
       "link": "https://melih.work",
       "type": "UI/UX"
+    },
+    {
+      "title": "Çilekli Matcha: Bir Doğa Masalı",
+      "description": "Bu çalışmada, ürünün doğal ve ferahlatıcı içeriğini vurgulamak için 'mikro dünya' konsepti kullanılmıştır. İçecek, masalsı bir bahçenin merkezine yerleştirilerek bir hikaye oluşturulmuştur.",
+      "image": "/images/works/matcha.png",
+      "link": "https://melih.work",
+      "type": "SOCIAL_MEDIA"
     },
     {
       "title": "Zey Glass Nass Hospital",
@@ -65,13 +93,6 @@
     },
     {
       "title": "Sunify Sosyal Medya Tasarımı",
-      "description": "Bu çalışmada aracın serin kalmasını sağlarken aynı anda temiz enerji üretme fikrini ön plana çıkarmak için modern mimari çizgileri güneş panelleriyle bütünleştirdim ☀️. Güneşten korunma ve güneşle şarj olma fikrini tek bir yapı altında toplayarak, otopark alanını pasif bir alan olmaktan çıkarıp aktif bir enerji kaynağı olarak konumlandırdım ⚡🚗.",
-      "image": "/images/works/sunify1.png",
-      "link": "https://melih.work",
-      "type": "SOCIAL_MEDIA"
-    },
-    {
-      "title": "Sunify Sosyal Medya Tasarımı",
       "description": "Bu çalışmada teknik güven duygusunu ve sürdürülebilir hizmet anlayışını vurgulamayı amaçladım. Tasarımda uzman personel figürüyle, sistemin yalnızca kurulum anında değil sonrasında da profesyonel bir şekilde takip edildiğini görsel olarak destekledim 👷‍♂️📋.",
       "image": "/images/works/sunify2.png",
       "link": "https://melih.work",
@@ -81,27 +102,6 @@
       "title": "Oppi Haftalık Haber",
       "description": "Haftalık yoğun bilgi içeriği, kullanıcıyı yormayan temiz bir hiyerarşi ve tematik dokularla zenginleştirilerek kaydırılabilir içerik formatına uygun hale getirilmiştir.",
       "image": "/images/works/oppi1.png",
-      "link": "https://melih.work",
-      "type": "SOCIAL_MEDIA"
-    },
-    {
-      "title": "Trippica Yaklaşan Etkinlikler",
-      "description": "Gezgin ruhunu ve global erişimi simgeleyen bulut temalı arka plan, net tipografik hiyerarşiyle birleştirilerek etkinlik takvimi içeriği kolayca taranabilir hale getirilmiştir. Alt kısımda kullanılan yırtık kağıt dokusu ve kurumsal CTA (eyleme çağrı) butonları, dijital bir markanın modern ve dinamik sosyal medya estetiğini yansıtmaktadır.",
-      "image": "/images/works/trippica1.png",
-      "link": "https://melih.work",
-      "type": "SOCIAL_MEDIA"
-    },
-    {
-      "title": "Dijital Finans Kontrolü: Flux",
-      "description": "Bu çalışmada karanlık arayüz ve net tipografiyle kontrol duygusunu güçlendirmeyi hedefledim. Akışkan geçişler ve sade hiyerarşi sayesinde tasarımı modern, güven veren ve odaklanmayı kolaylaştıran bir yapıda kurguladım 🌑✨.",
-      "image": "/images/works/flux1.png",
-      "link": "https://melih.work",
-      "type": "SOCIAL_MEDIA"
-    },
-    {
-      "title": "Çilekli Matcha: Bir Doğa Masalı",
-      "description": "Bu çalışmada, ürünün doğal ve ferahlatıcı içeriğini vurgulamak için 'mikro dünya' konsepti kullanılmıştır. İçecek, masalsı bir bahçenin merkezine yerleştirilerek bir hikaye oluşturulmuştur.",
-      "image": "/images/works/matcha.png",
       "link": "https://melih.work",
       "type": "SOCIAL_MEDIA"
     }
