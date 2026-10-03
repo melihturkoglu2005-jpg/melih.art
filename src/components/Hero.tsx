@@ -1,91 +1,85 @@
 "use client"
 
-import clsx from "clsx"
-import { motion, useInView, useScroll, useTransform } from "framer-motion"
-import { useTranslations } from "next-intl"
-import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
-import IconGlobe from "../assets/icons/globe.svg"
-import IconMonitorSmartPhone from "../assets/icons/monitor-smartphone.svg"
-import IconMoveRight from "../assets/icons/move-right.svg"
-import IconType from "../assets/icons/type.svg"
-import IconVariable from "../assets/icons/variable.svg"
+import { motion } from "framer-motion"
+import Image from "next/image"
 import { useProfileStore } from "../stores/useProfileStore"
+import { Link as ScrollLink } from "react-scroll"
 
 const Hero = () => {
-  const t = useTranslations()
-  const { email } = useProfileStore()
-  const { scrollYProgress } = useScroll()
-
-  const [ isFirstLoad, setIsFirstLoad ] = useState(true)
-
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { margin: "-50% 0px" })
-
-  const terms = [
-    {
-      icon: <IconType className="size-7" />,
-      label: t("hero_term_1"),
-      className: "rotate-2 right-12 top-0 from-lime-200 to-lime-300 text-lime-700 dark:from-lime-300 dark:to-lime-500 dark:text-lime-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 120 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -80 ])
-    },
-    {
-      icon: <IconMonitorSmartPhone className="size-7" />,
-      label: t("hero_term_2"),
-      className: "rotate-3 right-28 top-16 from-sky-200 to-sky-300 text-sky-700 dark:from-sky-300 dark:to-sky-500 dark:text-sky-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -100 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 60 ])
-    },
-    {
-      icon: <IconGlobe className="size-7" />,
-      label: t("hero_term_3"),
-      className: "-rotate-6 right-0 top-14 from-yellow-200 to-yellow-300 text-yellow-700 dark:from-yellow-300 dark:to-yellow-500 dark:text-yellow-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 80 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, 100 ])
-    },
-    {
-      icon: <IconVariable className="size-7" />,
-      label: t("hero_term_4"),
-      className: "rotate-6 right-28 top-8 from-purple-200 to-purple-300 text-purple-700 dark:from-purple-300 dark:to-purple-500 dark:text-purple-900",
-      moveX: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -90 ]),
-      moveY: useTransform(scrollYProgress, [ 0, 0.2 ], [ 0, -70 ])
-    }
-  ]
-
-  useEffect(() => {
-    if (!isFirstLoad) return
-    if (isInView) setIsFirstLoad(false)
-  }, [ isInView ])
+  const { avatar } = useProfileStore()
 
   return (
-    <section id="hero" className="relative flex items-center justify-center py-4 px-2 overflow-hidden">
-      <div className="container flex items-center justify-center lg:h-[calc(100vh-2rem)] pt-32 pb-16 lg:pt-0 lg:pb-0 bg-neutral-50 dark:bg-neutral-950 border border-neutral-100 rounded-3xl dark:border-neutral-900">
-        <div className="relative flex flex-col px-4 lg:px-20 w-full lg:w-3/4">
-          <p className="text-neutral-600 dark:text-neutral-300 text-xl mb-2 lg:mb-4">{t("hero_hello")}</p>
-          <h1 className="text-3xl lg:text-5xl lg:leading-[1.2] font-medium">{t("hero_description")}</h1>
-          <div className="flex justify-between">
-            <div className="flex items-center gap-2 mt-6 lg:mt-8">
-              <Link href={`mailto:${email}`} className="flex items-center justify-center gap-2 px-5 py-3 lg:px-6 lg:py-4 min-w-20 hover:bg-neutral-100 hover:dark:bg-neutral-900 border border-neutral-950 dark:border-neutral-100 rounded-full transition-colors duration-200 ease-out">
-                <span className="text-base lg:text-xl">{t("hero_btn_email")}</span>
-                <IconMoveRight className="size-5 lg:size-7" />
-              </Link>
-            </div>
-            <div ref={containerRef} className="hidden lg:flex relative top-20 -right-20 items-center justify-center">
-              {terms.map((item, index) => (
-                <motion.div
-                  key={index}
-                  style={{ x: item.moveX, y: item.moveY }}
-                  className={clsx("absolute flex items-center gap-2 bg-gradient-to-b font-medium py-4 px-7 rounded-2xl select-none transition-all", item.className)}
-                >
-                  {item.icon}
-                  <span className="text-xl">{item.label}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
+    <section id="hero" className="relative flex flex-col items-center justify-center min-h-[100dvh] w-full pt-20 overflow-hidden bg-neutral-50 dark:bg-neutral-950">
+      <div className="container mx-auto px-6 max-w-5xl z-10 flex flex-col items-center text-center">
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-24 h-24 md:w-32 md:h-32 mb-8 rounded-full overflow-hidden border border-neutral-200 dark:border-white/10 shadow-xl"
+        >
+          <Image
+            src={avatar}
+            alt="Melih Türkoğlu"
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+        >
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-sm font-medium text-neutral-600 dark:text-neutral-300">Açık İş Fırsatlarına Uygun</span>
+        </motion.div>
+
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="font-serif text-6xl md:text-8xl lg:text-[100px] leading-tight tracking-tight text-neutral-900 dark:text-white mb-6"
+        >
+          Melih Türkoğlu.
+        </motion.h1>
+
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-2xl text-balance mb-12 font-light"
+        >
+          <span className="font-medium text-neutral-900 dark:text-white">Grafik Tasarımcı.</span>
+        </motion.p>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="flex items-center gap-4"
+        >
+          <ScrollLink to="contact" smooth={true} duration={500} offset={-50}>
+            <button className="px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black text-base font-medium rounded-full hover:scale-105 transition-transform duration-300">
+              İletişime Geç
+            </button>
+          </ScrollLink>
+        </motion.div>
+
       </div>
+      
+      {/* Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">Aşağı Kaydır</span>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-neutral-300 dark:from-neutral-500 to-transparent" />
+      </motion.div>
     </section>
   )
 }

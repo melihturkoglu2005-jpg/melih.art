@@ -1,61 +1,70 @@
 "use client"
 
-import IconSparkles from "@/assets/icons/sparkles.svg"
-import { useTranslations } from "next-intl"
 import Link from "next/link"
 import IconBehance from "../assets/icons/behance.svg"
 import IconGithub from "../assets/icons/github.svg"
 import IconLinkedIn from "../assets/icons/linkedin.svg"
 import IconMoveRight from "../assets/icons/move-right.svg"
 import { useProfileStore } from "../stores/useProfileStore"
+import { motion } from "framer-motion"
 
 const Footer = () => {
-  const t = useTranslations()
   const { email, social } = useProfileStore()
 
   return (
-    <footer id="connect" className="flex items-center justify-center lg:py-4 p-2">
-      <div className="container flex flex-col p-4 lg:px-20 lg:py-40 border border-neutral-100 rounded-3xl dark:border-neutral-900">
-        <div className="flex flex-col items-start">
-          <h2 className="flex flex-col gap-8 text-xl lg:text-4xl lg:leading-[1.2] lg:w-4/6 mb-6 lg:mb-12">
-            <span>
-              {t("footer_ready_title")}
-            </span>
-            <span className="flex items-center gap-1">
-              {t("footer_build_title")}
-              <IconSparkles className="fill-yellow-400 stroke-yellow-400 dark:fill-yellow-500 dark:stroke-yellow-500 size-9 hidden lg:block" />
-            </span>
+    <footer id="contact" className="relative pt-32 pb-8 overflow-hidden bg-neutral-50 dark:bg-neutral-950">
+      
+      <div className="container mx-auto px-6 max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="glass-card p-12 md:p-24 flex flex-col items-center text-center mb-12 relative overflow-hidden bg-white/50 dark:bg-neutral-900/50"
+        >
+          <h2 className="font-serif text-5xl md:text-7xl text-neutral-900 dark:text-white mb-6 leading-tight">
+            Yeni bir proje mi?<br/>
+            <span className="text-neutral-500">Birlikte tasarlayalım.</span>
           </h2>
-          <Link href={`mailto:${email}`} className="flex items-center justify-center gap-2 px-6 py-4 min-w-20 bg-neutral-900 hover:bg-neutral-950 text-white dark:bg-neutral-50 hover:dark:bg-neutral-100 dark:text-neutral-950 rounded-full transition-colors duration-200 ease-out">
-            <span className="text-base lg:text-xl">{t("footer_btn_email")}</span>
-            <IconMoveRight className="size-6 lg:size-7" />
+          
+          <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-xl mb-12">
+            Fikirlerinizi hayata geçirmek ve kullanıcı odaklı harika dijital deneyimler yaratmak için iletişime geçin.
+          </p>
+          
+          <Link 
+            href={`mailto:${email}`} 
+            className="group relative inline-flex items-center justify-center gap-4 bg-neutral-900 dark:bg-white text-white dark:text-black rounded-full px-10 py-5 text-lg font-medium overflow-hidden transition-transform hover:scale-105"
+          >
+            <span className="relative z-10">Bana Ulaşın</span>
+            <IconMoveRight className="w-6 h-6 relative z-10 transition-transform group-hover:translate-x-2" />
           </Link>
-        </div>
-        <hr className="my-12 border-neutral-200 dark:border-neutral-800" />
-        <div className="flex lg:flex-row flex-col lg:justify-between gap-4">
-          <div className="w-full">
-            <p className="text-sm lg:text-base text-neutral-500 dark:text-neutral-400 mb-1 lg:mb-3">{t("footer_connect")}</p>
-            <Link href={`mailto:${email}`}>
-              <span className="text-lg lg:text-xl">{email}</span>
-            </Link>
-          </div>
-          <div className="w-full">
-            <p className="text-sm lg:text-base text-neutral-500 dark:text-neutral-400 mb-1 lg:mb-3">{t("footer_social")}</p>
-            <div className="flex flex-wrap gap-2">
-              {social.map((item, index) => {
-                const icon = {
-                  github: <IconGithub className="size-5 lg:size-6" />,
-                  behance: <IconBehance className="size-5 lg:size-6" />,
-                  linkedin: <IconLinkedIn className="size-5 lg:size-6" />
-                }[item.platform.toLocaleLowerCase()]
+        </motion.div>
 
-                return (
-                  <Link key={index} href={item.link} target="_blank" title={item.platform} className="border size-9 lg:size-10 flex items-center justify-center rounded-xl text-neutral-800 border-neutral-300 hover:bg-neutral-50 dark:text-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-900 transition-colors duration-200 ease-out">
-                    {icon}
-                  </Link>
-                )
-              })}
-            </div>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-8 border-t border-neutral-200 dark:border-white/10">
+          <p className="text-sm text-neutral-500">
+            © 2024 Melih Türkoğlu. Tüm hakları saklıdır.
+          </p>
+          
+          <div className="flex items-center gap-4">
+            {social.map((item, index) => {
+              const icon = {
+                github: <IconGithub className="w-5 h-5" />,
+                behance: <IconBehance className="w-5 h-5" />,
+                linkedin: <IconLinkedIn className="w-5 h-5" />
+              }[item.platform.toLocaleLowerCase()]
+
+              return (
+                <Link 
+                  key={index} 
+                  href={item.link} 
+                  target="_blank" 
+                  title={item.platform} 
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-white/10 hover:text-neutral-900 dark:hover:text-white transition-all"
+                >
+                  {icon}
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>

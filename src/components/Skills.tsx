@@ -24,7 +24,7 @@ const Skills = () => {
   return (
     <section id="skills" className="flex items-center justify-center py-4">
       <div className="container flex flex-col items-center justify-center py-8 px-2 lg:pt-28 lg:pb-56">
-        <h2 className="text-3xl lg:text-5xl lg:leading-[1] font-medium text-center w-4/6 lg:w-3/6 mb-10">
+        <h2 className="text-3xl lg:text-5xl lg:leading-[1] font-serif text-center w-4/6 lg:w-3/6 mb-10">
           {t("skills_title")}
         </h2>
         <div className="flex items-center justify-center lg:translate-x-12 lg:flex-row flex-col lg:gap-0 gap-6">

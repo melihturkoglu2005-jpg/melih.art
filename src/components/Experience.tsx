@@ -10,7 +10,7 @@ const Experience = () => {
   return (
     <section id="experience" className="flex items-center justify-center py-4">
       <div className="container flex flex-col items-center justify-center py-4 lg:pt-16 lg:pb-24 px-2">
-        <h2 className="text-3xl lg:text-5xl leading-[1] font-medium text-center lg:w-3/6 mb-5 lg:mb-10">
+        <h2 className="text-3xl lg:text-5xl leading-[1] font-serif text-center lg:w-3/6 mb-5 lg:mb-10">
           {t("experience_title")}
         </h2>
         <div className="flex flex-col grid-cols-9 p-2 mx-auto md:grid">

@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply scroll-smooth;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
 }
 
-body {
-  @apply text-neutral-950 dark:text-neutral-100;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-card {
+    @apply bg-white/70 dark:bg-white/[0.02] border border-neutral-200 dark:border-white/[0.05] backdrop-blur-xl rounded-3xl shadow-lg dark:shadow-2xl;
+  }
 }

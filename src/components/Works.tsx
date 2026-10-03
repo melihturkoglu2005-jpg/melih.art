@@ -1,104 +1,129 @@
 "use client"
 
 import worksData from "@/data/works.json"
-import { useTranslations } from "next-intl"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import ImageLightbox from "./ImageLightbox"
 
 type ProjectType = "UI/UX" | "SOCIAL_MEDIA"
 
 const Works = () => {
-  const t = useTranslations()
-  const [ activeFilter, setActiveFilter ] = useState<ProjectType>("SOCIAL_MEDIA")
-  const [ isTransitioning, setIsTransitioning ] = useState(false)
-  const [ isMounted, setIsMounted ] = useState(false)
-  const [ lightboxImage, setLightboxImage ] = useState<{ src: string; alt: string; title?: string; description?: string } | null>(null)
+  const [activeFilter, setActiveFilter] = useState<ProjectType>("UI/UX")
+  const [lightboxImage, setLightboxImage] = useState<{
+    src: string
+    alt: string
+    title?: string
+    description?: string
+  } | null>(null)
 
-  const filteredWorks = worksData.works.filter((work) => work.type === activeFilter)
+  const filteredWorks = worksData.works.filter(
+    (work) => work.type === activeFilter
+  )
 
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (!isMounted) return
-    setIsTransitioning(true)
-    const timer = setTimeout(() => setIsTransitioning(false), 250)
-    return () => clearTimeout(timer)
-  }, [ activeFilter, isMounted ])
+  const filters: { label: string; value: ProjectType }[] = [
+    { label: "Kullanıcı Arayüzü (UI/UX)", value: "UI/UX" },
+    { label: "Sosyal Medya", value: "SOCIAL_MEDIA" },
+  ]
 
   return (
-    <section id="works" className="flex items-center justify-center py-4">
-      <div className="container flex flex-col items-center justify-center py-8 lg:pt-16 lg:pb-32 px-2">
-        <h2 className="text-3xl lg:text-5xl lg:leading-[1] font-medium text-center lg:w-3/6 mb-5 lg:mb-10">
-          {t("works_title")}
-        </h2>
+    <section id="works" className="py-24 md:py-32 relative bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
+      <div className="container mx-auto px-6 max-w-7xl">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex-1"
+          >
+            <h2 className="font-serif text-4xl md:text-6xl text-neutral-900 dark:text-white mb-4">
+              Seçili Çalışmalar
+            </h2>
+            <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-md">
+              Estetik ve işlevsel grafik tasarım çözümleri.
+            </p>
+          </motion.div>
 
-        {/* Filter Buttons */}
-        <div className="flex items-center gap-3 mb-8 lg:mb-12">
-          <button
-            onClick={() => setActiveFilter("SOCIAL_MEDIA")}
-            className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === "SOCIAL_MEDIA"
-              ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
-              : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-            }`}
+          {/* Filter Tabs */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex items-center gap-2 p-1.5 glass-card shrink-0"
           >
-            Sosyal Medya
-          </button>
-          <button
-            onClick={() => setActiveFilter("UI/UX")}
-            className={`px-6 py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-200 ease-out ${activeFilter === "UI/UX"
-              ? "bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-900 shadow-md"
-              : "bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-            }`}
-          >
-            UI/UX
-          </button>
+            {filters.map((filter) => (
+              <button
+                key={filter.value}
+                onClick={() => setActiveFilter(filter.value)}
+                className={`relative px-6 py-2.5 text-sm font-medium rounded-full transition-colors duration-300 ${
+                  activeFilter === filter.value
+                    ? "text-neutral-900 dark:text-white"
+                    : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                }`}
+              >
+                {activeFilter === filter.value && (
+                  <motion.div
+                    layoutId="worksFilterBg"
+                    className="absolute inset-0 bg-neutral-200 dark:bg-white/10 rounded-full"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{filter.label}</span>
+              </button>
+            ))}
+          </motion.div>
         </div>
 
-        {/* Works Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
-          {filteredWorks.map((work, index) => {
-            const aspectRatio = work.type === "SOCIAL_MEDIA" ? "aspect-[4/5]" : "aspect-[4/3]"
-
-            return (
-              <div
+        {/* Works Horizontal Scroll */}
+        <motion.div layout className="flex gap-6 overflow-x-auto pb-12 snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
+          <AnimatePresence mode="popLayout">
+            {filteredWorks.map((work, index) => (
+              <motion.div
+                layout
                 key={`${work.title}-${index}`}
-                className={`flex flex-col rounded-3xl border border-neutral-100 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 overflow-hidden transition-opacity duration-300 ease-out hover:shadow-lg hover:shadow-neutral-200/30 dark:hover:shadow-neutral-900/30 ${isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
-                style={{
-                  transitionDelay: isTransitioning ? `${index * 30}ms` : "0ms"
-                }}
-              >
-                <div
-                  className={`relative w-full ${aspectRatio} overflow-hidden cursor-pointer`}
-                  onClick={() => setLightboxImage({
+                initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative shrink-0 w-[85vw] md:w-[50vw] lg:w-[600px] aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer glass-card snap-center"
+                onClick={() =>
+                  setLightboxImage({
                     src: work.image,
                     alt: work.title,
                     title: work.title,
-                    description: work.description
-                  })}
-                >
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    className="object-cover transition-transform duration-300 ease-out hover:scale-[1.03]"
-                    fill
-                  />
+                    description: work.description,
+                  })
+                }
+              >
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  >
+                    <h3 className="text-2xl font-serif text-white mb-2">
+                      {work.title}
+                    </h3>
+                    <p className="text-neutral-300 text-sm line-clamp-2">
+                      {work.description}
+                    </p>
+                  </motion.div>
                 </div>
-                <div className="flex flex-col p-5 lg:p-6">
-                  <h3 className="text-xl lg:text-2xl mb-2 font-medium transition-colors duration-200 ease-out hover:text-neutral-900 dark:hover:text-neutral-100">
-                    {work.title}
-                  </h3>
-                  <p className="text-sm lg:text-base text-neutral-500 dark:text-neutral-400 line-clamp-3">
-                    {work.description}
-                  </p>
-                </div>
-              </div>
-            )
-          })}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       <ImageLightbox

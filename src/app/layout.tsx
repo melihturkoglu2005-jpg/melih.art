@@ -2,18 +2,23 @@ import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
-import { Rubik } from "next/font/google"
+import { Outfit, Playfair_Display } from "next/font/google"
 import ThemeProvider from "../components/ThemeProvider"
 import "../styles/globals.css"
 
-const rubik = Rubik({
-  subsets: [ "latin" ],
-  weight: [ "300", "400", "500", "600", "700", "800", "900" ]
+const sansFont = Outfit({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const serifFont = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
 })
 
 export const metadata: Metadata = {
-  title: "Melih Türkoğlu",
-  description: "Kullanıcı dostu ve akıcı arayüzler tasarlayan bir tasarımcıyım."
+  title: "Melih Türkoğlu | Grafik Tasarımcı",
+  description: "Fikirleri estetik ve akıcı dijital deneyimlere dönüştürüyorum."
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -22,7 +27,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${rubik.className} antialiased bg-white dark:bg-black min-h-screen overflow-x-hidden`}>
+      <body className={`${sansFont.variable} ${serifFont.variable} font-sans antialiased bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 min-h-screen overflow-x-hidden selection:bg-neutral-900/10 dark:selection:bg-neutral-100/10`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             {children}
