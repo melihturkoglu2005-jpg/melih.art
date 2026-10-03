@@ -10,8 +10,8 @@ import IconSun from "../assets/icons/sun.svg"
 import { useThemeStore } from "../stores/useThemeStore"
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState<string | null>(null)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [ activeSection, setActiveSection ] = useState<string | null>(null)
+  const [ isScrolled, setIsScrolled ] = useState(false)
   const { theme, toggleTheme } = useThemeStore()
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Navbar = () => {
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.8, ease: [ 0.16, 1, 0.3, 1 ] }}
         className={clsx(
           "flex items-center gap-1 md:gap-2 p-1.5 rounded-full transition-all duration-500",
           isScrolled ? "glass-card" : "bg-transparent"

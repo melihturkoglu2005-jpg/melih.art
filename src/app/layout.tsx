@@ -7,13 +7,13 @@ import ThemeProvider from "../components/ThemeProvider"
 import "../styles/globals.css"
 
 const sansFont = Outfit({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: [ "latin" ],
+  variable: "--font-sans"
 })
 
 const serifFont = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
+  subsets: [ "latin" ],
+  variable: "--font-serif"
 })
 
 export const metadata: Metadata = {

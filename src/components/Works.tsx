@@ -9,8 +9,8 @@ import ImageLightbox from "./ImageLightbox"
 type ProjectType = "UI/UX" | "SOCIAL_MEDIA"
 
 const Works = () => {
-  const [activeFilter, setActiveFilter] = useState<ProjectType>("UI/UX")
-  const [lightboxImage, setLightboxImage] = useState<{
+  const [ activeFilter, setActiveFilter ] = useState<ProjectType>("UI/UX")
+  const [ lightboxImage, setLightboxImage ] = useState<{
     src: string
     alt: string
     title?: string
@@ -23,7 +23,7 @@ const Works = () => {
 
   const filters: { label: string; value: ProjectType }[] = [
     { label: "Kullanıcı Arayüzü (UI/UX)", value: "UI/UX" },
-    { label: "Sosyal Medya", value: "SOCIAL_MEDIA" },
+    { label: "Sosyal Medya", value: "SOCIAL_MEDIA" }
   ]
 
   return (
@@ -93,7 +93,7 @@ const Works = () => {
                     src: work.image,
                     alt: work.title,
                     title: work.title,
-                    description: work.description,
+                    description: work.description
                   })
                 }
               >

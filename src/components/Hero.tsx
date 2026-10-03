@@ -15,7 +15,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, ease: [ 0.16, 1, 0.3, 1 ] }}
           className="relative w-24 h-24 md:w-32 md:h-32 mb-8 rounded-full overflow-hidden border border-neutral-200 dark:border-white/10 shadow-xl"
         >
           <Image
@@ -30,7 +30,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [ 0.16, 1, 0.3, 1 ] }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -40,7 +40,7 @@ const Hero = () => {
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [ 0.16, 1, 0.3, 1 ] }}
           className="font-serif text-6xl md:text-8xl lg:text-[100px] leading-tight tracking-tight text-neutral-900 dark:text-white mb-6"
         >
           Melih Türkoğlu.
@@ -49,7 +49,7 @@ const Hero = () => {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [ 0.16, 1, 0.3, 1 ] }}
           className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-2xl text-balance mb-12 font-light"
         >
           <span className="font-medium text-neutral-900 dark:text-white">Grafik Tasarımcı.</span>
@@ -58,7 +58,7 @@ const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [ 0.16, 1, 0.3, 1 ] }}
           className="flex items-center gap-4"
         >
           <ScrollLink to="contact" smooth={true} duration={500} offset={-50}>
