@@ -1,0 +1,31 @@
+{
+  "skills": [
+    {
+      "title": "Tasarım Araçları",
+      "skills": [
+        "Figma",
+        "Photoshop",
+        "Premier Pro",
+        "Final Cut Pro",
+        "Illustrator"
+      ]
+    },
+    {
+      "title": "Tasarım Süreci",
+      "skills": [
+        "Kullanıcı Araştırması",
+        "Wireframing",
+        "Prototype",
+        "Kullanılabilirlik Testi",
+        "Geri Bildirim"
+      ]
+    },
+    {
+      "title": "Teknik Yetkinlik",
+      "skills": [
+        "Responsive Design",
+        "Grid System"
+      ]
+    }
+  ]
+}

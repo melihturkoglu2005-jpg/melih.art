@@ -1,0 +1,20 @@
+{
+  "navbar_items": [
+    {
+      "label": "Beceriler",
+      "href": "#skills"
+    },
+    {
+      "label": "Deneyim",
+      "href": "#experience"
+    },
+    {
+      "label": "Çalışmalar",
+      "href": "#works"
+    },
+    {
+      "label": "İletişim",
+      "href": "#connect"
+    }
+  ]
+}

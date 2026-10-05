@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-card {
+    @apply bg-white/70 dark:bg-white/[0.02] border border-neutral-200 dark:border-white/[0.05] backdrop-blur-xl rounded-3xl shadow-lg dark:shadow-2xl;
+  }
+}
