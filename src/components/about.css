@@ -1,0 +1,61 @@
+/* Portre, kısa biyografi ve açılabilir deneyim satırları. */
+.bio-page { max-width: 1072px; padding: 24px var(--pad) 80px; margin: 0 auto; }
+.bio-portrait { position: relative; width: min(100%, 440px); aspect-ratio: 480 / 380; margin: 0 auto 40px; }
+.bio-portrait > img { position: absolute; width: 52%; height: 66%; object-fit: cover; left: 24%; top: 16%; border-radius: 48% 49% 43% 44%; }
+.bio-portrait-ink { position: absolute; inset: 0; width: 100%; height: 100%; }
+.bio-portrait .bio-portrait-star { position: absolute; left: 22%; bottom: 12%; transform: rotate(-14deg); }
+.bio-portrait .bio-portrait-cursor { position: absolute; right: 13%; top: 43%; transform: rotate(13deg); }
+.bio-introduction h1 { font-family: var(--serif); font-size: clamp(2.15rem, 4.2vw, 3.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -.03em; margin-bottom: 28px; }
+.bio-introduction > p { color: var(--hero-gray); font-size: clamp(1.06rem, 1.65vw, 1.3rem); line-height: 1.85; }
+.bio-introduction > p + p { margin-top: 25px; }
+.bio-experience { padding-top: clamp(58px, 8vw, 96px); }
+.bio-experience > h2 { font-size: clamp(2rem, 3.7vw, 3rem); }
+.bio-section-note { color: var(--hero-gray); font-size: 1.12rem; margin-top: 16px; }
+.bio-rows { margin-top: 32px; }
+.bio-row { border-bottom: 1px solid var(--line); }
+.bio-row summary { display: grid; grid-template-columns: minmax(0, 1fr) auto 24px; gap: 32px; align-items: start; padding: 33px 0; cursor: pointer; list-style: none; }
+.bio-row summary::-webkit-details-marker { display: none; }
+.bio-row-name { display: grid; gap: 10px; }
+.bio-row-name strong, .bio-education-row h3 { font-size: 1.13rem; font-weight: 500; line-height: 1.5; }
+.bio-row-name > span, .bio-row-date { color: var(--hero-gray); font-size: 1rem; line-height: 1.6; }
+.bio-row-date { padding-top: 2px; white-space: nowrap; }
+.bio-toggle { position: relative; width: 22px; height: 22px; margin-top: 4px; }
+.bio-toggle::before, .bio-toggle::after { content: ""; position: absolute; top: 10px; left: 1px; width: 20px; height: 3px; border-radius: 3px; background: var(--ink); }
+.bio-toggle::after { transform: rotate(90deg); transition: transform .18s; }
+.bio-row[open] .bio-toggle::after { transform: rotate(0); }
+.bio-row summary:hover strong { color: var(--link); }
+.bio-row-content { max-width: 720px; padding: 0 45px 30px 0; }
+.bio-row-content p { color: var(--muted); font-size: .98rem; line-height: 1.85; }
+.bio-row-content a { display: inline-block; color: var(--ink); font-size: .88rem; text-decoration-thickness: 1px; text-underline-offset: 5px; margin-top: 18px; }
+.bio-row-content a span { margin-left: 12px; }
+.bio-education { padding-top: 64px; }
+.bio-education > h2, .bio-toolbox > h2 { font-family: var(--font); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
+.bio-education-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; padding-top: 30px; }
+.bio-education-row p, .bio-education-row > span { color: var(--hero-gray); font-size: 1rem; line-height: 1.7; }
+.bio-education-row p { margin-top: 10px; }
+.bio-education-row > span { white-space: nowrap; }
+.bio-toolbox { padding-top: 46px; }
+.bio-toolbox > p { color: var(--hero-gray); font-size: .98rem; line-height: 1.85; margin-top: 17px; }
+.bio-toolbox .bio-language { margin-top: 12px; font-size: .86rem; }
+@media (max-width: 650px) {
+  .bio-page { padding-top: 12px; padding-bottom: 48px; }
+  .bio-portrait { width: min(100%, 350px); margin-bottom: 25px; }
+  .bio-introduction h1 { margin-bottom: 20px; }
+  .bio-introduction > p { font-size: 1.04rem; line-height: 1.85; }
+  .bio-experience { padding-top: 48px; }
+  .bio-section-note { font-size: 1rem; }
+  .bio-rows { margin-top: 22px; }
+  .bio-row summary { grid-template-columns: minmax(0, 1fr) 22px; gap: 10px 17px; padding: 25px 0; }
+  .bio-row-name { gap: 7px; }
+  .bio-row-name strong, .bio-education-row h3 { font-size: 1.05rem; }
+  .bio-row-name > span { font-size: .94rem; }
+  .bio-row-date { grid-row: 2; font-size: .82rem; padding: 0; }
+  .bio-toggle { grid-column: 2; grid-row: 1; }
+  .bio-row-content { padding: 0 0 24px; }
+  .bio-row-content p { font-size: .94rem; }
+  .bio-education { padding-top: 42px; }
+  .bio-education-row { flex-direction: column; gap: 10px; padding-top: 24px; }
+  .bio-education-row > span { font-size: .83rem; }
+  .bio-toolbox { padding-top: 35px; }
+}
+@media (prefers-reduced-motion: reduce) { .bio-toggle::after { transition: none; } }
