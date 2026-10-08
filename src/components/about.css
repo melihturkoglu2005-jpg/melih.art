@@ -1,60 +1,89 @@
-/* Etkileşimli kimlik kartı, kısa biyografi ve açılabilir deneyim satırları. */
-.bio-page { max-width: 980px; padding: 24px var(--pad) 72px; margin: 0 auto; }
+/* Hakkımda: serbest kimlik kartı, beceri destesi ve kariyer zaman çizelgesi. */
+.bio-page { max-width: 1000px; padding: 24px var(--pad) 84px; margin: 0 auto; }
 .bio-lanyard-wrap { position: relative; width: 100vw; height: clamp(430px, 55vw, 540px); margin: -24px calc(50% - 50vw) -28px; }
 .bio-lanyard { position: absolute; z-index: 5; top: 0; left: 0; width: 100%; height: min(2400px, calc(100vh + 1600px)); overflow: visible; cursor: grab; pointer-events: none; }
 .bio-lanyard:active { cursor: grabbing; }
-.bio-introduction h1 { font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 500; line-height: 1.15; letter-spacing: -.03em; margin-bottom: 22px; }
-.bio-introduction > p { color: var(--hero-gray); font-size: clamp(.98rem, 1.2vw, 1.1rem); line-height: 1.75; }
+.bio-introduction { max-width: 820px; margin-inline: auto; }
+.bio-introduction h1 { font-size: clamp(2rem, 3.4vw, 3.2rem); font-weight: 500; line-height: 1.05; letter-spacing: -.045em; margin-bottom: 22px; }
+.bio-introduction > p { max-width: 740px; color: var(--muted); font-size: clamp(.94rem, 1.05vw, 1.03rem); line-height: 1.75; }
 .bio-introduction > p + p { margin-top: 20px; }
-.bio-experience { padding-top: clamp(52px, 6vw, 76px); }
-.bio-experience > h2 { font-size: clamp(1.75rem, 2.8vw, 2.4rem); }
-.bio-section-note { color: var(--hero-gray); font-size: 1rem; margin-top: 12px; }
-.bio-rows { margin-top: 26px; }
-.bio-row { border-bottom: 1px solid var(--line); }
-.bio-row summary { display: grid; grid-template-columns: minmax(0, 1fr) auto 24px; gap: 28px; align-items: start; padding: 27px 0; cursor: pointer; list-style: none; }
-.bio-row summary::-webkit-details-marker { display: none; }
-.bio-row-name { display: grid; gap: 10px; }
-.bio-row-name strong, .bio-info-row h3 { font-size: 1.03rem; font-weight: 500; line-height: 1.5; }
-.bio-row-name > span, .bio-row-date { color: var(--hero-gray); font-size: .92rem; line-height: 1.6; }
-.bio-row-date { padding-top: 2px; white-space: nowrap; }
-.bio-toggle { position: relative; width: 22px; height: 22px; margin-top: 4px; }
-.bio-toggle::before, .bio-toggle::after { content: ""; position: absolute; top: 10px; left: 1px; width: 20px; height: 3px; border-radius: 3px; background: var(--ink); }
-.bio-toggle::after { transform: rotate(90deg); transition: transform .18s; }
-.bio-row[open] .bio-toggle::after { transform: rotate(0); }
-.bio-row summary:hover strong { color: var(--link); }
-.bio-row-content { max-width: 720px; padding: 0 45px 30px 0; }
-.bio-row-content p { color: var(--muted); font-size: .98rem; line-height: 1.85; }
-.bio-row-content a { display: inline-block; color: var(--ink); font-size: .88rem; text-decoration-thickness: 1px; text-underline-offset: 5px; margin-top: 18px; }
-.bio-row-content a span { margin-left: 12px; }
-.bio-info { padding-top: 46px; }
-.bio-education { padding-top: 64px; }
-.bio-info > h2 { font-family: var(--font); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
-.bio-info-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; padding-top: 30px; }
-.bio-info-row p, .bio-info-row > span { color: var(--hero-gray); font-size: .92rem; line-height: 1.7; }
-.bio-info-row p { margin-top: 10px; }
+
+.bio-skills { padding-top: clamp(84px, 10vw, 140px); }
+.bio-skills > h2, .career-journey > h2 { max-width: 780px; margin-inline: auto; color: var(--ink); font-family: var(--font); font-size: clamp(2.25rem, 4.8vw, 4.45rem); font-weight: 600; line-height: .98; letter-spacing: -.055em; text-align: center; text-wrap: balance; }
+.skill-deck { display: flex; align-items: flex-start; justify-content: center; min-height: 470px; margin: clamp(60px, 7vw, 92px) auto 0; padding-inline: 28px; }
+.skill-card { width: min(30vw, 315px); overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 8px 24px #00000008; }
+.skill-card h3 { padding: 12px 18px; font-size: 1rem; font-weight: 500; text-align: center; }
+.skill-card ul { padding: 0; margin: 0; list-style: none; background: #fff; }
+.skill-card li { padding: 12px 18px; border-top: 1px solid var(--line); font-size: clamp(.9rem, 1.25vw, 1.08rem); }
+.skill-card-1 { z-index: 1; transform: translateX(50px) rotate(-6deg); }
+.skill-card-2 { z-index: 2; transform: translateY(76px) rotate(6deg); }
+.skill-card-3 { z-index: 3; transform: translateX(-50px) rotate(3deg); }
+.skill-card-1 h3 { background: linear-gradient(90deg, #bef264, #ecfccb); color: #365314; }
+.skill-card-2 h3 { background: linear-gradient(90deg, #d8b4fe, #f3e8ff); color: #6b21a8; }
+.skill-card-3 h3 { background: linear-gradient(90deg, #7dd3fc, #e0f2fe); color: #075985; }
+
+.career-journey { padding-top: clamp(70px, 9vw, 120px); }
+.career-journey > h2 { max-width: 840px; }
+.career-timeline { position: relative; max-width: 700px; margin: clamp(58px, 7vw, 88px) auto 0; }
+.career-timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: #d4d4d4; transform: translateX(-50%); }
+.career-item { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr); min-height: 142px; align-items: center; }
+.career-item > div { max-width: 290px; }
+.career-item p { color: var(--muted); font-size: clamp(.92rem, 1.5vw, 1.1rem); line-height: 1.4; margin-bottom: 8px; }
+.career-item h3 { font-size: clamp(1.2rem, 2.1vw, 1.75rem); font-weight: 600; line-height: 1.15; letter-spacing: -.025em; }
+.career-right > div { grid-column: 3; }
+.career-left > div { grid-column: 1; justify-self: end; width: 100%; }
+.career-dot { position: absolute; z-index: 1; top: 50%; left: 50%; width: 28px; height: 28px; border: 5px solid #fff; border-radius: 50%; background: var(--ink); transform: translate(-50%, -50%); }
+
+.bio-info { max-width: 920px; padding-top: 52px; margin-inline: auto; }
+.bio-education { padding-top: clamp(100px, 12vw, 150px); }
+.bio-info > h2 { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
+.bio-info-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; padding-top: 28px; }
+.bio-info-row h3 { font-size: 1.05rem; font-weight: 500; line-height: 1.5; }
+.bio-info-row p, .bio-info-row > span { color: var(--muted); font-size: .92rem; line-height: 1.7; }
+.bio-info-row p { margin-top: 8px; }
 .bio-info-row > span { white-space: nowrap; }
 .bio-language-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
-@media (max-width: 650px) {
-  .bio-page { padding-top: 12px; padding-bottom: 48px; }
+
+@media (max-width: 760px) {
+  .bio-page { padding-top: 12px; padding-bottom: 72px; }
   .bio-lanyard-wrap { height: clamp(420px, 112vw, 500px); margin: -12px calc(50% - 50vw) -24px; }
   .bio-lanyard { height: min(2400px, calc(100vh + 1700px)); }
-  .bio-introduction h1 { margin-bottom: 20px; }
-  .bio-introduction > p { font-size: 1.04rem; line-height: 1.85; }
-  .bio-experience { padding-top: 48px; }
-  .bio-section-note { font-size: 1rem; }
-  .bio-rows { margin-top: 22px; }
-  .bio-row summary { grid-template-columns: minmax(0, 1fr) 22px; gap: 10px 17px; padding: 25px 0; }
-  .bio-row-name { gap: 7px; }
-  .bio-row-name strong, .bio-info-row h3 { font-size: 1.05rem; }
-  .bio-row-name > span { font-size: .94rem; }
-  .bio-row-date { grid-row: 2; font-size: .82rem; padding: 0; }
-  .bio-toggle { grid-column: 2; grid-row: 1; }
-  .bio-row-content { padding: 0 0 24px; }
-  .bio-row-content p { font-size: .94rem; }
-  .bio-info { padding-top: 35px; }
-  .bio-education { padding-top: 42px; }
-  .bio-info-row { flex-direction: column; gap: 10px; padding-top: 24px; }
+  .bio-introduction h1 { margin-bottom: 22px; }
+  .bio-introduction > p { font-size: 1rem; line-height: 1.8; }
+  .bio-skills { padding-top: 82px; }
+  .bio-skills > h2, .career-journey > h2 { font-size: clamp(2.15rem, 9.5vw, 3.2rem); }
+  .skill-deck { flex-direction: column; align-items: stretch; gap: 18px; min-height: 0; margin-top: 52px; padding-inline: 0; }
+  .skill-card { width: 100%; transform: none; }
+  .skill-card li { font-size: 1rem; }
+  .career-journey { padding-top: 100px; }
+  .career-timeline { margin-top: 58px; padding-left: 8px; }
+  .career-timeline::before { left: 14px; transform: none; }
+  .career-item { display: block; min-height: 138px; padding-left: 54px; }
+  .career-item > div, .career-left > div { max-width: none; width: auto; }
+  .career-dot { left: 16px; width: 24px; height: 24px; }
+  .career-item h3 { font-size: 1.35rem; }
+  .bio-info { padding-top: 38px; }
+  .bio-education { padding-top: 90px; }
+  .bio-info-row { flex-direction: column; gap: 10px; padding-top: 22px; }
   .bio-info-row > span { font-size: .83rem; }
   .bio-language-list { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
-@media (prefers-reduced-motion: reduce) { .bio-toggle::after { transition: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card { transform: none; }
+}
+
+.bio-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 90px auto 0; max-width: 840px; }
+.bio-details-grid .bio-info { width: 100%; margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--card); }
+.bio-details-grid .bio-education { grid-column: 1 / -1; }
+.bio-details-grid .bio-info > h2 { font-family: var(--font); font-size: .83rem; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.bio-details-grid .bio-info-row { padding-top: 18px; gap: 18px; }
+.bio-details-grid .bio-info-row h3 { font-size: 1rem; }
+.bio-details-grid .bio-info-row p { font-size: .9rem; margin-top: 6px; }
+.bio-details-grid .bio-education .bio-info-row > span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-size: .75rem; }
+.bio-details-grid .bio-language-list { gap: 20px; }
+
+@media (max-width: 760px) {
+  .bio-details-grid { grid-template-columns: 1fr; margin-top: 60px; gap: 14px; }
+  .bio-details-grid .bio-info { padding: 24px; }
+}

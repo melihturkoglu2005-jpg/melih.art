@@ -1,31 +1,24 @@
-import Link from "next/link"
-import { profile } from "@/data/profile"
 import Lanyard from "./Lanyard"
 import "./about.css"
 
-const experiences = [
+const skillGroups = [
   {
-    title: "Freelance",
-    role: "Grafik tasarımcı",
-    date: "Mayıs 2024 — Bugün",
-    text: "Markalar için sosyal medya görselleri, kampanya içerikleri ve arayüz tasarımları hazırlıyorum. Çalışmalarımı Photoshop, Figma ve Adobe araçlarıyla üretiyorum.",
-    href: "/beta#projeler",
-    link: "Çalışmalarımı gör"
+    title: "Tasarım Araçları",
+    skills: [ "Photoshop", "Illustrator", "Premiere Pro", "Final Cut Pro", "After Effects", "Figma" ]
   },
   {
-    title: "Future Scope Uluslararası Film Festivali",
-    role: "Video kurgu",
-    date: "5–6 Aralık 2025",
-    text: "Festival sırasında gelen ham görüntüleri düzenleyip sosyal medyada paylaşılacak kısa videolara dönüştürdüm. Etkinlik devam ederken içerikleri kısa sürede hazırlayıp teslim ettim."
+    title: "Yapay zekâ",
+    skills: [ "ChatGPT", "Claude", "Gemini" ]
   },
   {
-    title: "Indoles",
-    role: "Web ve mobil arayüz tasarımı",
-    date: "Devam ediyor",
-    text: "MBTI ve Enneagram testlerini, kişilik tipi açıklamalarını ve karakter rehberini bir araya getiren proje. Ana sayfa, test akışı ve sonuç ekranlarının web ve mobil görünümleri üzerinde çalışıyorum.",
-    href: "/beta/projeler/indoles",
-    link: "Projeyi incele"
+    title: "Yetkinlikler",
+    skills: [ "Sosyal medya tasarımı", "UI/UX tasarımı", "Video kurgu", "Marka kimliği", "Prototipleme", "Yapay zekâ destekli üretim" ]
   }
+]
+
+const career = [
+  { date: "Mayıs 2024 — Devam ediyor", title: "Freelance grafik tasarımcı" },
+  { date: "5–6 Aralık 2025", title: "Future Scope Film Festivali · Video kurgu" }
 ]
 
 function ProfileLanyard() {
@@ -42,7 +35,7 @@ function ProfileLanyard() {
           cornerRadius={ 0.2 }
           size={ 0.62 }
           strapLength={ 0.13 }
-          strapColor="#2a1b14"
+          strapColor="#000000"
           strapWidth={ 0.7 }
           metal="silver"
           gravity={ 0.9 }
@@ -69,41 +62,35 @@ export default function About() {
         <p>Markalar için kampanya içerikleri hazırlıyor, arayüzler tasarlıyor ve video kurgu yapıyorum. Bu sitede seçtiğim çalışmaların yanında, geliştirmeye devam ettiğim Indoles projesini de paylaşıyorum.</p>
       </section>
 
-      <section className="bio-experience" aria-labelledby="bio-work-title">
-        <h2 id="bio-work-title">Deneyimlerim</h2>
-        <p className="bio-section-note">Çalıştığım işler ve projeler.</p>
-        <div className="bio-rows">
-          { experiences.map((experience) => (
-            <details className="bio-row" key={ experience.title }>
-              <summary>
-                <span className="bio-row-name"><strong>{ experience.title }</strong><span>{ experience.role }</span></span>
-                <span className="bio-row-date">{ experience.date }</span>
-                <span className="bio-toggle" aria-hidden="true" />
-              </summary>
-              <div className="bio-row-content">
-                <p>{ experience.text }</p>
-                { experience.href ? <Link href={ experience.href }>{ experience.link } <span aria-hidden="true">↗</span></Link> : null }
-              </div>
-            </details>
+      <section className="bio-skills" aria-labelledby="bio-skills-title">
+        <h2 id="bio-skills-title">Beni genellikle bunların bir kombinasyonunu yaparken bulursun.</h2>
+        <div className="skill-deck">
+          { skillGroups.map((group, index) => (
+            <article className={ `skill-card skill-card-${ index + 1 }` } key={ group.title }>
+              <h3>{ group.title }</h3>
+              <ul>
+                { group.skills.map((skill) => <li key={ skill }>{ skill }</li>) }
+              </ul>
+            </article>
           )) }
         </div>
       </section>
 
-      <section className="bio-info bio-education" aria-labelledby="bio-education-title">
-        <h2 id="bio-education-title">Eğitim</h2>
-        <div className="bio-info-row"><div><h3>{ profile.school.name }</h3><p>{ profile.school.detail }</p></div><span>Devam ediyor</span></div>
-      </section>
-      <section className="bio-info bio-toolbox" aria-labelledby="bio-tools-title">
-        <h2 id="bio-tools-title">Kullandığım araçlar</h2>
-        <div className="bio-info-row"><div><h3>Tasarım ve üretim</h3><p>Figma, Photoshop, Illustrator (başlangıç), Final Cut Pro ve CapCut.</p></div></div>
-      </section>
-      <section className="bio-info bio-languages" aria-labelledby="bio-languages-title">
-        <h2 id="bio-languages-title">Diller</h2>
-        <div className="bio-language-list">
-          <div className="bio-info-row"><div><h3>Türkçe</h3><p>Ana dil</p></div></div>
-          <div className="bio-info-row"><div><h3>İngilizce</h3><p>A2+</p></div></div>
+      <section className="career-journey" aria-labelledby="career-title">
+        <h2 id="career-title">Şimdiye kadarki profesyonel yolculuğum</h2>
+        <div className="career-timeline">
+          { career.map((item, index) => (
+            <article className={ index % 2 === 0 ? "career-item career-right" : "career-item career-left" } key={ item.title }>
+              <span className="career-dot" aria-hidden="true" />
+              <div>
+                <p>{ item.date }</p>
+                <h3>{ item.title }</h3>
+              </div>
+            </article>
+          )) }
         </div>
       </section>
+
     </article>
   )
 }

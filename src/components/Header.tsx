@@ -45,11 +45,9 @@ export default function Header() {
   return (
     <header className={ `site-header${ scrolled ? " scrolled" : "" }` }>
       <nav className="bar nav" aria-label="Ana menü">
-        <div className="nav-left">
-          <Link href="/beta#projeler" data-active={ onProjects && !onContact }>Projelerim</Link>
-        </div>
         <Link className="brand" href="/beta" aria-label={ `${ profile.name }, ana sayfa` }>melih</Link>
         <div className="nav-right">
+          <Link href="/beta#projeler" data-active={ onProjects && !onContact }>Projelerim</Link>
           <Link href="/beta/hakkimda" data-active={ onAbout && !onContact }>Hakkımda</Link>
           <a href="#iletisim" data-active={ onContact }>İletişim</a>
         </div>

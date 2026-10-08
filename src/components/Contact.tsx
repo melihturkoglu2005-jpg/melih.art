@@ -1,26 +1,34 @@
 import { profile } from "@/data/profile"
-import CopyEmail from "./CopyEmail"
-import { Doodle } from "./Doodles"
 
 export default function Contact() {
   return (
-    <section className="reach-out" id="iletisim" aria-labelledby="contact-title">
-      <div className="reach-heading" data-reveal>
-        <p className="label">İletişim</p>
-        <h2 id="contact-title">Birlikte güzel<br /><span className="mark-wrap">işler çıkaralım.<Doodle name="underline" className="mark" stretch /></span></h2>
-        <p className="reach-description">Aklındaki projeyi, ekibindeki fırsatı ya da sadece bir merhabayı duymak isterim.</p>
-      </div>
-      <div className="reach-details" data-reveal>
-        <Doodle name="plane" className="reach-plane" width="5rem" />
-        <span className="reach-note">Bir mesaj kadar yakınım.</span>
-        <a className="reach-email" href={ `mailto:${ profile.email }` }>
-          <span>{ profile.email }</span><span aria-hidden="true">↗</span>
-        </a>
-        <div className="reach-actions">
-          <a className="btn btn-dark" href={ `mailto:${ profile.email }` }>E-posta gönder <span aria-hidden="true">↗</span></a>
-          <CopyEmail email={ profile.email } />
+    <footer className="connect-footer" id="iletisim" aria-labelledby="contact-title">
+      <div className="connect-card" data-reveal>
+        <div className="connect-intro">
+          <h2 id="contact-title">Fikirlerini yaratıcı tasarım çözümleriyle hayata geçirmeye hazır mısın?</h2>
+          <p>Birlikte harika bir şey üretelim <span aria-hidden="true">✦</span></p>
+          <a className="connect-button" href={ `mailto:${ profile.email }` }>
+            İletişime geç
+          </a>
+        </div>
+
+        <div className="connect-meta">
+          <div>
+            <span className="connect-label">İletişim</span>
+            <a className="connect-email" href={ `mailto:${ profile.email }` }>{ profile.email }</a>
+          </div>
+          <div>
+            <span className="connect-label">Takip et</span>
+            <nav className="connect-social" aria-label="Sosyal medya">
+              { profile.social.map((item) => (
+                <a key={ item.label } href={ item.href } target="_blank" rel="noopener noreferrer" aria-label={ item.label }>
+                  { item.label === "LinkedIn" ? "in" : "Bē" }
+                </a>
+              )) }
+            </nav>
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
   )
 }

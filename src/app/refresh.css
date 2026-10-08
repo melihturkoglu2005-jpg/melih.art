@@ -187,3 +187,361 @@
   .footer-logo { font-size: clamp(2.7rem, 5vw, 3.6rem); }
   .footer-note { font-size: clamp(1.25rem, 2vw, 1.7rem); }
 }
+
+/* Yılmaz Ev referansındaki nötr palet, kapsül butonlar ve geniş kart ritmi. */
+.btn {
+  min-height: 50px;
+  padding-inline: 26px;
+  border-radius: 999px;
+}
+
+.btn-ghost {
+  box-shadow: inset 0 0 0 1px #d4d4d4;
+}
+
+.projects {
+  width: min(100%, 1160px);
+  max-width: 1160px;
+  padding: clamp(58px, 7vw, 96px) var(--pad);
+}
+
+.projects-head {
+  margin-bottom: clamp(36px, 5vw, 66px);
+}
+
+.projects-head h2 {
+  font-family: var(--font);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.project-grid {
+  width: 100%;
+  max-width: none;
+  gap: 48px;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(240px, .72fr) minmax(0, 2.2fr);
+  gap: 18px;
+  min-height: clamp(390px, 42vw, 530px);
+}
+
+.pc-info, .pc-cover {
+  border: 1px solid #eeeeee;
+  border-radius: 26px;
+  background: #fff;
+}
+
+.pc-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.pc-info h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+}
+
+.pc-info p {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: clamp(.92rem, 1.25vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.pc-open {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 58px;
+  padding: 0 22px;
+  border: 1px solid #d4d4d4;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s, transform .2s;
+}
+
+.pc-open svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pc-open:hover {
+  color: #fff;
+  background: #171717;
+  border-color: #171717;
+  transform: translateY(-2px);
+}
+
+.pc-cover {
+  grid-column: auto;
+  grid-row: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  padding: clamp(18px, 2.4vw, 30px);
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.pc-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: none;
+  transition: transform .7s var(--ease);
+}
+
+.project-card:hover .pc-cover img {
+  transform: scale(1.015);
+}
+
+.connect-footer {
+  padding: 18px;
+  background: #fff;
+}
+
+.connect-card {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: clamp(34px, 5.5vw, 76px);
+  border: 1px solid #eeeeee;
+  border-radius: 28px;
+}
+
+.connect-intro h2 {
+  max-width: 21ch;
+  font-family: var(--font);
+  font-size: clamp(1.9rem, 3.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -.05em;
+  text-wrap: balance;
+}
+
+.connect-intro > p {
+  margin-top: clamp(34px, 5vw, 66px);
+  font-family: var(--font);
+  font-size: clamp(1.55rem, 2.8vw, 2.7rem);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+
+.connect-intro > p span {
+  color: var(--c-orange);
+}
+
+.connect-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 58px;
+  margin-top: clamp(36px, 5vw, 68px);
+  padding: 0 26px;
+  border-radius: 999px;
+  color: #fff;
+  background: #171717;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background .2s, transform .2s;
+}
+
+.connect-button:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.connect-button svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.connect-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: clamp(58px, 8vw, 100px);
+  padding-top: clamp(34px, 5vw, 58px);
+  border-top: 1px solid var(--line);
+}
+
+.connect-label {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.connect-email {
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
+  text-decoration: none;
+}
+
+.connect-email:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.connect-social {
+  display: flex;
+  gap: 10px;
+}
+
+.connect-social a {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d4d4d4;
+  border-radius: 14px;
+  color: #171717;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background .2s, color .2s;
+}
+
+.connect-social a:hover {
+  color: #fff;
+  background: #171717;
+}
+
+@media (max-width: 760px) {
+  .projects { padding-block: 66px; }
+  .project-card { grid-template-columns: 1fr; min-height: 0; }
+  .pc-info { min-height: 290px; }
+  .pc-cover { height: auto; aspect-ratio: 16 / 11; padding: 14px; }
+  .pc-cover img { border-radius: 16px; }
+  .connect-footer { padding: 10px; }
+  .connect-card { padding: 34px 24px; border-radius: 22px; }
+  .connect-intro h2 { font-size: clamp(1.75rem, 7.4vw, 2.4rem); }
+  .connect-intro > p { font-size: clamp(1.35rem, 5.6vw, 1.85rem); }
+  .connect-button { width: 100%; }
+  .connect-meta { grid-template-columns: 1fr; gap: 30px; }
+  .connect-email { overflow-wrap: anywhere; }
+}
+
+@media (min-width: 761px) {
+  .case-layout {
+    max-width: 1120px;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: clamp(22px, 3vw, 42px);
+  }
+
+  .case-main { max-width: 840px; }
+  .case-side { padding-top: 30px; }
+  .case-nav li a { font-size: .9rem; }
+  .case-title { font-size: clamp(1.9rem, 3.2vw, 2.8rem); }
+  .case-indoles .case-title { font-size: clamp(2.2rem, 3.7vw, 3.55rem); }
+  .case-lead { font-size: clamp(.96rem, 1.15vw, 1.05rem); }
+  .case-section, .case-indoles .case-section { padding-top: clamp(38px, 4.5vw, 60px); }
+  .blk + .blk { margin-top: clamp(30px, 3.8vw, 48px); }
+  .blk-title { font-size: clamp(1.5rem, 2.3vw, 2rem); }
+  .story-caption h2 { font-size: clamp(1.5rem, 2.25vw, 2rem); }
+}
+
+/* Ortak tipografi, içerik kenarları ve kompakt iletişim alanı. */
+:root {
+  --section-heading: clamp(1.9rem, 3.15vw, 2.65rem);
+  --content-width: 1160px;
+}
+
+h1, h2, h3, .case-title, .story-caption h2, .lb-info h3 {
+  font-family: var(--font);
+}
+
+.hero .hero-title { font-family: var(--serif); }
+
+
+.work-shelf .selected-title, .projects-head h2 {
+  font-family: var(--font);
+  font-size: var(--section-heading);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+
+.work-shelf .art.dd.mark .line, .projects .art.dd.mark .line {
+  stroke: var(--hero-gray);
+}
+
+.site-header, .site-header.scrolled {
+  padding: 14px var(--pad) 10px;
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-header .bar.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: calc(var(--content-width) - 2 * var(--pad));
+  min-height: 60px;
+  padding: 8px 20px;
+  gap: 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffffed;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.site-header .nav .brand { font-size: 2.1rem; padding: 0 4px; }
+.site-header .nav-right { display: flex; gap: 4px; }
+.site-header .nav-right a { padding: 8px 15px; border: 1px solid transparent; border-radius: 999px; font-size: .86rem; }
+.site-header .nav-right a[data-active="true"] { border-color: var(--line); background: var(--card); }
+.site-header .nav a::after { display: none; }
+
+.connect-footer {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding: 0 var(--pad) 24px;
+}
+
+.connect-card { padding: clamp(26px, 3.5vw, 44px); border-radius: 26px; }
+.connect-intro { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 36px; align-items: center; }
+.connect-intro h2 { max-width: 28ch; font-size: clamp(1.6rem, 2.45vw, 2.35rem); line-height: 1.18; }
+.connect-intro > p { grid-column: 1; margin-top: 16px; font-size: clamp(1.05rem, 1.5vw, 1.3rem); letter-spacing: -.025em; }
+.connect-button { grid-column: 2; grid-row: 1 / 3; min-height: 48px; margin: 0; padding-inline: 22px; font-size: .95rem; }
+.connect-meta { margin-top: 32px; padding-top: 24px; gap: 24px; align-items: start; }
+.connect-label { margin-bottom: 10px; font-size: .82rem; }
+.connect-email { font-size: clamp(.95rem, 1.5vw, 1.15rem); }
+.connect-social a { width: 40px; height: 40px; border-radius: 12px; }
+
+@media (max-width: 760px) {
+  .site-header { padding: 10px 12px; }
+  .site-header .bar.nav { min-height: 54px; padding: 6px 10px; gap: 6px; }
+  .site-header .nav .brand { font-size: 1.8rem; }
+  .site-header .nav-right { gap: 0; }
+  .site-header .nav-right a { padding: 7px 8px; font-size: .75rem; }
+  .connect-intro { grid-template-columns: 1fr; gap: 0; }
+  .connect-button { grid-column: 1; grid-row: auto; justify-self: start; width: auto; margin-top: 24px; }
+  .connect-meta { grid-template-columns: 1fr; gap: 22px; }
+  .connect-card { padding: 26px 22px; }
+}

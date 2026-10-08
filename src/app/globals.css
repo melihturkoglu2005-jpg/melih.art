@@ -4,28 +4,28 @@
    ========================================================================== */
 
 :root {
-  --paper: #fffdfa;
-  --card: #f8f3ec;
-  --surface: #fffdfa;
-  --ink: #2a1b14;
-  --muted: #6f655d;
-  --line: #e4dacd;
-  --chip: rgba(42, 27, 20, 0.07);
-  --chip-hover: rgba(42, 27, 20, 0.13);
-  --link: #b8431c;
-  --btn: #2a1b14;
-  --btn-hover: #4a3328;
-  --on-btn: #fffdfa;
-  --edge: #2a1b14;
+  --paper: #ffffff;
+  --card: #fafafa;
+  --surface: #ffffff;
+  --ink: #111111;
+  --muted: #737373;
+  --line: #e5e5e5;
+  --chip: #f5f5f5;
+  --chip-hover: #ebebeb;
+  --link: #111111;
+  --btn: #171717;
+  --btn-hover: #000000;
+  --on-btn: #ffffff;
+  --edge: #171717;
   --tint-a: #fde5d8;
   --tint-b: #d9e9f8;
   --tint-c: #e5efc0;
   --spot: rgba(255, 255, 255, 0.9);
-  --doodle: #2a1b14;
-  --c-orange: #ee7348;
+  --doodle: #171717;
+  --c-orange: #c99582;
   --c-blue: #a8cdf0;
   --c-green: #c4d76a;
-  --hero-gray: #8b837c;
+  --hero-gray: #737373;
   --app-ai: #ff9a00;
   --app-ps: #31a8ff;
   --app-pr: #9999ff;
@@ -2564,7 +2564,7 @@ h2 {
 .story-phone .device-top span:not(:first-child) { display: none; }
 .story-screen .zoom { border-radius: 0; }
 .story-screen .zoom img { width: 100%; border-radius: 0; object-fit: contain; }
-.story-screen.story-phone .zoom { overflow: hidden; border-radius: 31px; background: #fff; clip-path: inset(0 round 31px); }
+.story-screen.story-phone .zoom { overflow: hidden; padding-top: 26px; border-radius: 31px; background: #fff; clip-path: inset(0 round 31px); }
 .story-screen.story-phone .zoom img { display: block; width: 100%; border-radius: 31px; object-fit: contain; }
 .story-screen figcaption { text-align: center; font-size: .86rem; line-height: 1.5; padding: 16px 4px 0; }
 .story-browser { flex: 3; align-self: center; }
