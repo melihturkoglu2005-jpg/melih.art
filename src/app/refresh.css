@@ -103,7 +103,7 @@
   .projects { padding-block: 50px 56px; }
   .project-card { grid-template-columns: 1fr; }
   .pc-top { padding: 0 0 12px; }
-  .pc-cover { aspect-ratio: 4 / 3; padding: 18px; border-radius: 12px; }
+  .pc-cover { aspect-ratio: 16 / 10; padding: 18px; border-radius: 12px; }
   .pc-cover img { object-fit: contain; background: white; }
   .pc-body { padding-top: 22px; }
   .pc-meta { grid-column: 1; grid-row: 4; padding-top: 20px; }
@@ -124,4 +124,67 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .project-card:hover .pc-cover img, .reach-email:hover > span:last-child { transform: none; }
+}
+
+/* Tüm sayfalarda daha uzaktan, aynı ritimde görünen kompakt ölçek. */
+@media (min-width: 701px) {
+  :root { --maxw: 1120px; }
+
+  .bar.nav {
+    max-width: 700px;
+    min-height: 66px;
+    gap: 34px;
+  }
+  .nav .brand { font-size: 2.75rem; }
+  .nav-right { gap: 25px; }
+
+  .hero-stage {
+    width: 88%;
+    max-width: 1120px;
+    min-height: 410px;
+  }
+  .hero-copy { font-size: clamp(1.75rem, min(2.65vw, 5svh), 2.55rem); }
+  .work-shelf { padding-top: 32px; }
+  .work-shelf .selected-title { margin-bottom: 18px; font-size: clamp(1.8rem, 3vw, 2.55rem); }
+  .work-shelf .marquee { --h: clamp(230px, 27vw, 330px); padding-block: 16px 22px; }
+
+  .projects {
+    max-width: 1040px;
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+  .projects-head { margin-bottom: 30px; }
+  .projects-head h2 { font-size: clamp(2rem, 3.3vw, 2.9rem); }
+  .project-grid { max-width: 920px; margin-inline: auto; gap: 48px; }
+  .pc-cover { aspect-ratio: 2 / 1; padding: clamp(16px, 3vw, 38px); }
+  .pc-body { padding-top: 22px; }
+  .pc-body h3 { font-size: clamp(1.6rem, 2.5vw, 2.25rem); }
+
+  .case-layout {
+    max-width: 1240px;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: clamp(24px, 3.5vw, 52px);
+  }
+  .case-main { max-width: 920px; }
+  .case-hero { padding-top: clamp(24px, 4vw, 48px); }
+  .case-title { font-size: clamp(2rem, 3.8vw, 3.15rem); }
+  .case-indoles .case-title { font-size: clamp(2.35rem, 4.4vw, 4.25rem); }
+  .case-lead { font-size: clamp(1rem, 1.35vw, 1.13rem); }
+  .case-cover { margin-top: clamp(22px, 3vw, 36px); border-radius: 22px; }
+  .case-section, .case-indoles .case-section { padding-top: clamp(42px, 5.5vw, 72px); }
+  .blk + .blk { margin-top: clamp(34px, 4.5vw, 58px); }
+  .blk-title { font-size: clamp(1.65rem, 2.8vw, 2.3rem); }
+  .story-showcase { padding: clamp(20px, 3vw, 38px); border-radius: 22px; }
+  .story-caption h2 { font-size: clamp(1.65rem, 2.7vw, 2.35rem); }
+
+  .reach-out {
+    max-width: 1040px;
+    padding: 52px 0 58px;
+    gap: clamp(32px, 5vw, 70px);
+  }
+  .reach-heading h2 { font-size: clamp(2.1rem, 3vw, 2.85rem); }
+  .footer-topline, .footer-bottom { max-width: 1040px; }
+  .footer-topline { min-height: 132px; }
+  .footer-logo { font-size: clamp(2.7rem, 5vw, 3.6rem); }
+  .footer-note { font-size: clamp(1.25rem, 2vw, 1.7rem); }
 }
