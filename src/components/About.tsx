@@ -49,6 +49,7 @@ function ProfileLanyard() {
           damping={ 0.58 }
           elasticity={ 0.48 }
           breeze={ 0.28 }
+          freeDrag
           flippable={ false }
           intro={ false }
           style={ undefined }

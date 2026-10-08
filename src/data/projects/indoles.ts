@@ -13,7 +13,7 @@ export const indoles: Project = {
   kicker: "Indoles · Masaüstü ve mobil arayüz tasarımı",
   mark: "I",
   name: "Indoles",
-  tags: [ "Devam eden proje" ],
+  tags: [ "Geliştirmeye devam ediyorum" ],
   meta: "MBTI · Enneagram · Karakter rehberi",
   role: "Arayüz tasarımı",
   tools: [ "React Native", "Expo", "React Native Web" ],

@@ -2552,13 +2552,18 @@ h2 {
 .story-caption > p:last-child { font-size: 1.03rem; line-height: 1.75; }
 .story-screens { display: flex; align-items: flex-start; justify-content: center; gap: clamp(18px, 3vw, 34px); }
 .story-screen { min-width: 0; }
-.story-phone { flex: 1; max-width: 255px; }
+.story-phone { flex: 1; max-width: 255px; padding-inline: 4px; }
 .story-phone:nth-child(2) { margin-top: 36px; }
 .device-frame { background: #fff; overflow: hidden; border: 6px solid #242622; box-shadow: 0 20px 35px -20px #1a221a66; }
-.story-phone .device-frame { border-radius: 30px; }
+.story-phone .device-frame { position: relative; padding: 7px; overflow: visible; border: 1px solid #626262; border-radius: 39px; background: linear-gradient(145deg, #4b4b4d 0%, #171719 18%, #050506 52%, #353537 100%); box-shadow: 0 28px 48px -24px #11172299, inset 0 0 0 1px #ffffff24, inset 0 0 0 3px #050506; }
+.story-phone .device-frame::before { content: ""; position: absolute; z-index: 3; left: -4px; top: 76px; width: 3px; height: 30px; border-radius: 3px 0 0 3px; background: #252527; box-shadow: 0 45px 0 #252527, 0 82px 0 #252527; }
+.story-phone .device-frame::after { content: ""; position: absolute; z-index: 3; right: -4px; top: 108px; width: 3px; height: 61px; border-radius: 0 3px 3px 0; background: #252527; }
 .device-top { height: 20px; display: flex; align-items: center; justify-content: center; gap: 5px; background: #fff; }
-.story-phone .device-top span:first-child { width: 45px; height: 5px; border-radius: 8px; background: #242622; }
+.story-phone .device-top { position: absolute; z-index: 4; top: 15px; left: 50%; width: 66px; height: 19px; padding: 0; border-radius: 999px; background: #050505; transform: translateX(-50%); box-shadow: 0 1px 2px #0008; pointer-events: none; }
+.story-phone .device-top span:first-child { width: 5px; height: 5px; margin-left: 43px; border-radius: 50%; background: #17233a; box-shadow: inset 0 0 0 1px #304368; }
 .story-phone .device-top span:not(:first-child) { display: none; }
+.story-phone .zoom { overflow: hidden; border-radius: 31px; background: #fff; }
+.story-phone .zoom img { border-radius: 31px; }
 .story-screen .zoom { border-radius: 0; }
 .story-screen .zoom img { width: 100%; border-radius: 0; object-fit: contain; }
 .story-screen figcaption { text-align: center; font-size: .86rem; line-height: 1.5; padding: 16px 4px 0; }

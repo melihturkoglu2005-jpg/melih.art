@@ -25,7 +25,6 @@ export default function Projects() {
             style={ { "--tint": project.tint, "--d": `${ index * 90 }ms` } as CSSProperties }
           >
             <span className="pc-top">
-              <span className="project-number">{ String(index + 1).padStart(2, "0") }</span>
               <span className="pc-mark" aria-hidden="true">{ project.mark }</span>
               <span className="pc-name">{ project.name }</span>
               <span className="pc-tags" aria-label="Proje durumu">
