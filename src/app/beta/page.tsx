@@ -1,5 +1,5 @@
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
+import Hero from "@/components/Hero"
+import Projects from "@/components/Projects"
 
 export default function Page() {
   return (
@@ -7,5 +7,5 @@ export default function Page() {
       <Hero />
       <Projects />
     </main>
-  );
+  )
 }

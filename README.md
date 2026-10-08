@@ -11,17 +11,18 @@ npm install
 npm run dev
 ```
 
-Sonra tarayıcıda http://localhost:3000 adresini aç. Canlıya almak için `npm run build` ve `npm start` (ya da Vercel'e bağla).
+Sonra tarayıcıda http://localhost:3000/beta adresini aç. Canlıya almak için `npm run build` ve `npm start` (ya da Vercel'e bağla).
 
 ## Sayfalar
 
 | Adres                       | Ne                                                        |
 | --------------------------- | --------------------------------------------------------- |
-| `/`                         | Giriş, kayan çalışmalar şeridi ve "Projelerim" kartları   |
-| `/hakkimda`                 | Hakkımda sayfası                                          |
-| `/projeler/<proje-adı>`     | Her proje için ayrıntılı, Behance tarzı anlatım sayfası   |
+| `/`                         | İçeriksiz siyah ekran                                    |
+| `/beta`                     | Giriş, kayan çalışmalar şeridi ve "Projelerim" kartları   |
+| `/beta/hakkimda`             | Hakkımda sayfası                                          |
+| `/beta/projeler/<proje-adı>` | Her proje için ayrıntılı, Behance tarzı anlatım sayfası   |
 
-Üst menü, iletişim bölümü ve alt bilgi her sayfada ortaktır (`src/components/Shell.tsx`).
+Üst menü, iletişim bölümü ve alt bilgi `/beta` altındaki sayfalarda ortaktır (`src/components/Shell.tsx`).
 
 ## Yeni proje nasıl eklenir
 

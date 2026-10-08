@@ -1,7 +1,3 @@
-﻿export default function BlackPage() {
-  return (
-    <div
-      style={{ width: "100vw", height: "100vh", backgroundColor: "black" }}
-    />
-  );
+export default function BlackPage() {
+  return <main aria-label="Boş sayfa" style={ { minHeight: "100dvh", background: "#000" } } />
 }

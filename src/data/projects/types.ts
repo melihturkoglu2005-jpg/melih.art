@@ -37,7 +37,7 @@ export type Section = {
 }
 
 export type Project = {
-  // Adres: /projeler/<slug>
+  // Adres: /beta/projeler/<slug>
   slug: string
   // Sayfanın büyük başlığı
   title: string
