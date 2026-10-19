@@ -432,10 +432,19 @@
 
 @media (max-width: 760px) {
   .projects { padding-block: 66px; }
-  .project-card { grid-template-columns: 1fr; min-height: 0; }
-  .pc-info { min-height: 290px; }
-  .pc-cover { height: auto; aspect-ratio: 16 / 11; padding: 14px; }
-  .pc-cover img { border-radius: 16px; }
+  .project-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+    border-radius: 26px;
+    background: #fff;
+  }
+  .pc-info, .pc-cover { border: 0; border-radius: 0; }
+  .pc-info { min-height: 0; padding: 26px 24px 20px; gap: 26px; }
+  .pc-cover { height: auto; aspect-ratio: auto; padding: 0 14px 14px; background: #fff; }
+  .pc-cover img { width: 100%; aspect-ratio: 16 / 10; border-radius: 18px; object-fit: cover; }
   .connect-footer { padding: 10px; }
   .connect-card { padding: 34px 24px; border-radius: 22px; }
   .connect-intro h2 { font-size: clamp(1.75rem, 7.4vw, 2.4rem); }
@@ -462,6 +471,75 @@
   .blk + .blk { margin-top: clamp(30px, 3.8vw, 48px); }
   .blk-title { font-size: clamp(1.5rem, 2.3vw, 2rem); }
   .story-caption h2 { font-size: clamp(1.5rem, 2.25vw, 2rem); }
+}
+
+/* Project stories share the portfolio's typography and quiet card surfaces. */
+.case-indoles .case-title {
+  font-family: var(--font);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+  max-width: 22ch;
+}
+.case-indoles .blk-title, .case-indoles .story-caption h2 {
+  font-family: var(--font);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+}
+.case-indoles .label, .case-indoles .case-meta dt {
+  font-family: var(--font);
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .035em;
+}
+.case-indoles .case-lead { font-size: 1rem; line-height: 1.75; }
+.case-indoles .case-meta {
+  padding: 22px;
+  gap: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--card);
+  font-size: .88rem;
+}
+.case-indoles .case-nav li a {
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: .82rem;
+}
+.case-indoles .case-nav li a::before { display: none; }
+.case-indoles .case-nav li a[data-active="true"] {
+  background: var(--card);
+  border-color: var(--line);
+  color: var(--ink);
+  font-weight: 500;
+  transform: none;
+}
+.case-indoles .story-showcase {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--card);
+  color: var(--ink);
+}
+.case-indoles .story-caption > p:last-child { color: var(--muted); font-size: .95rem; }
+.case-indoles .story-steps article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 22px;
+}
+.case-indoles .step-number { font-family: var(--font); font-size: 1.4rem; color: var(--muted); }
+.case-indoles .story-steps h3 { font-weight: 500; font-size: 1.05rem; }
+.case-indoles .story-steps p { font-size: .9rem; }
+.case-indoles .btn { min-height: 44px; font-size: .88rem; padding: 12px 22px; }
+.case-indoles .case-end { border-top: 1px solid var(--line); margin-top: 44px; padding-top: 32px; }
+@media (max-width: 760px) {
+  .case-indoles .case-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 18px; }
+  .case-indoles .case-meta dd { overflow-wrap: anywhere; }
+  .case-indoles .story-type { gap: 16px; }
+  .case-indoles .case-section { scroll-margin-top: 140px; }
 }
 
 /* Ortak tipografi, içerik kenarları ve kompakt iletişim alanı. */
