@@ -172,44 +172,64 @@ p{margin:0;font-size:38px;line-height:1.35}
 }
 #notes{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(66px + env(safe-area-inset-bottom,0px));width:min(1100px,92vw);max-height:38vh;overflow:auto;background:#fff;border:3px solid #cfe9a0;border-bottom-width:8px;border-radius:22px;padding:14px 22px;font-size:17px;line-height:1.5;font-weight:700;color:#2e2e2e;z-index:10;display:none}#notes.on{display:block}#notes small{display:block;color:var(--mut);font-weight:900;margin-bottom:4px}#toast{position:fixed;left:50%;top:calc(4px + env(safe-area-inset-top,0px));width:32em;max-width:94vw;z-index:30;font-size:clamp(10px,1.3vw,24px);visibility:hidden;opacity:0;transform:translate(-50%,-220%);cursor:pointer}#toast.on{visibility:visible}#toast.in{animation:tdrop .75s cubic-bezier(.2,1.35,.4,1) forwards}#toast.out{animation:tout .45s ease-in forwards}@keyframes tdrop{from{opacity:0;transform:translate(-50%,-220%)}to{opacity:1;transform:translate(-50%,0)}}@keyframes tout{from{opacity:1;transform:translate(-50%,0)}to{opacity:0;transform:translate(-50%,-220%)}}.tn{display:flex;gap:.7em;align-items:center;background:#fff;border:.1em solid #E5E5E5;border-bottom-width:.3em;border-radius:1.1em;padding:.85em;box-shadow:0 .7em 1.8em rgba(0,0,0,.2)}.tn .ti{flex:none;width:3em;height:3em}.tn .ti svg,.tn .ti img{display:block;width:100%;height:100%;border-radius:22%}.tn b{display:block;font-size:.85em;color:var(--mut);font-weight:900}.tn .tx{font-size:1.05em;font-weight:900;color:#2e2e2e;line-height:1.2;margin-top:.1em;text-wrap:balance}#toast.angry .tn{border-color:#F2B8AB}#toast.panic .tn{border-color:#BFE6A0}#toast.sk .tn{animation:shk 1s .75s ease-in-out 2}@keyframes shk{10%{transform:translateX(-.7em) rotate(-1deg)}25%{transform:translateX(.6em) rotate(.8deg)}40%{transform:translateX(-.45em) rotate(-.6deg)}55%{transform:translateX(.3em)}70%{transform:translateX(-.15em)}85%{transform:translateX(.05em)}}@media(prefers-reduced-motion:reduce){#toast.in{opacity:1;transform:translate(-50%,0)}}#nt[aria-pressed="true"]{background:var(--y);border-bottom-color:#d99d00}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-/* Final campaign artwork is displayed in full, without crops or overlays. */
-.s.application {padding:38px 100px 44px;color:var(--ink)}
-.application .app-label {font-size:26px;color:#7042a6;font-weight:900;margin-bottom:18px}
-.application h2 {font-size:66px;line-height:1.1;margin-bottom:32px}
-.application .app-layout {display:grid;grid-template-columns:1100px 1fr;gap:58px;align-items:center;height:825px}
+/* The original campaign artwork stays intact; the framing follows the deck's cards. */
+.s.application {padding:38px 100px 44px;color:var(--ink);background:#fbfdf6}
+.s.application.app-digital {background:#faf7ff}
+.s.application.app-experience {background:#f8fcf5}
+.application .app-label {display:inline-block;width:auto;background:#eaf8c6;border-radius:999px;padding:8px 22px;font-size:25px;color:#36540e;font-weight:900;margin-bottom:16px}
+.application.app-digital .app-label {background:#eee3fb;color:#7042a6}
+.application h2 {font-size:66px;line-height:1.1;margin-bottom:25px;color:#2e2e2e}
+.application .app-layout {display:grid;grid-template-columns:1050px minmax(0,1fr);gap:35px;align-items:stretch;height:825px}
 .application figure {margin:0;min-width:0}
+.application .app-visual,.application .poster-grid figure {background:#f0f8df;border:3px solid #deecbe;border-bottom:12px solid #cfe4a4;border-radius:36px;padding:22px}
+.application.app-digital .app-visual {background:#f0eaf9;border-color:#e0d2f2;border-bottom-color:#ceb9e8}
+.application .app-open {display:block;width:100%;height:100%;margin:0;padding:0;border:0;background:transparent;cursor:zoom-in;border-radius:12px}
+.application .app-open:focus-visible {outline:7px solid #7042a6;outline-offset:4px}
 .application .app-art {display:block;width:100%;height:100%;object-fit:contain}
 .application .app-visual {width:100%;height:825px}
-.application .app-copy p {font-size:31px;line-height:1.45}
-.application .app-meta {margin:32px 0 0;padding-top:28px;border-top:3px solid #d9ebc3}
-.application .app-meta>div+div {margin-top:24px}
-.application dt {font-size:25px;font-weight:900;color:#7042a6;margin-bottom:8px}
-.application dd {margin:0;font-size:29px;line-height:1.4}
-.application .app-note {font-size:25px;line-height:1.4;color:var(--mut);margin-top:28px}
-.application .poster-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;height:600px}
-.application .poster-grid figure {height:600px}
-.application .poster-description {font-size:30px;line-height:1.35;margin-top:28px}
-.application .poster-meta {display:grid;grid-template-columns:1fr 1.3fr;gap:48px;margin-top:22px;padding-top:20px}
+.application .app-copy {min-width:0;background:#fff;border:3px solid #e4efcf;border-bottom:12px solid #d3e7ad;border-radius:36px;padding:34px 38px;display:flex;flex-direction:column;justify-content:center}
+.application.app-digital .app-copy {border-color:#e7daf6;border-bottom-color:#d9c7ef}
+.application .app-copy p {font-size:28px;line-height:1.4}
+.application .app-meta {margin:25px 0 0;padding-top:21px;border-top:3px solid #d9ebc3}
+.application .app-meta>div+div {margin-top:18px}
+.application dt {font-size:24px;font-weight:900;color:#527d19;margin-bottom:5px}
+.application.app-digital dt {color:#7042a6}
+.application dd {margin:0;font-size:27px;line-height:1.35}
+.application .app-note {font-size:23px;line-height:1.4;color:var(--mut);margin-top:22px}
+.application .poster-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;height:552px}
+.application .poster-grid figure {height:552px;padding:17px}
+.application .poster-grid figure:nth-child(2) {background:#f0eaf9;border-color:#e0d2f2;border-bottom-color:#ceb9e8}
+.application .poster-grid figure:nth-child(3) {background:#f7f2e8;border-color:#ecdfc6;border-bottom-color:#dfcfae}
+.application .poster-description {font-size:27px;line-height:1.32;margin-top:18px}
+.application .poster-meta {display:grid;grid-template-columns:1fr 1.3fr;gap:48px;margin-top:17px;padding-top:16px}
 .application .poster-meta>div+div {margin-top:0}
+#image-viewer {position:fixed;inset:0;width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:clamp(14px,3vw,32px);border:0;background:#17220d;color:#fff;overflow:hidden}
+#image-viewer::backdrop {background:#17220d}
+#image-viewer[open] {display:flex;flex-direction:column;gap:16px}
+.viewer-bar {display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:clamp(15px,2vw,24px);font-weight:900}
+#viewer-close {border:0;border-radius:999px;background:#90cb39;color:#17300a;font:900 18px Nunito,sans-serif;padding:12px 22px;cursor:pointer}
+#viewer-close:hover,#viewer-close:focus-visible {background:#b6ea68}
+#viewer-image {display:block;min-width:0;min-height:0;max-width:100%;max-height:calc(100dvh - 105px);width:auto;height:auto;object-fit:contain;margin:auto}
 #stage.artwork-focus #duo,#stage.artwork-focus #bub,body.artwork-focus #toast {display:none}
 .strategy-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 .strategy-grid .tile {padding:28px;height:360px}
 .strategy-grid .tile b {font-size:36px}
 .strategy-grid .tile p {font-size:30px}
 @media(max-width:900px) and (orientation:portrait){
-  .s.application {padding:0}
-  .application .app-label {font-size:13px;line-height:1.45;margin-bottom:12px}
+  .s.application {padding:18px;border-radius:22px}
+  .application .app-label {font-size:13px;line-height:1.45;margin-bottom:16px;padding:7px 11px}
   .application h2 {font-size:30px;line-height:1.15;margin-bottom:24px}
   .application .app-layout {grid-template-columns:minmax(0,1fr);height:auto;gap:24px}
-  .application .app-visual {height:auto}
+  .application .app-visual {height:auto;padding:12px;border-width:2px;border-bottom-width:7px;border-radius:20px}
   .application .app-art {height:auto;object-fit:contain}
+  .application .app-copy {padding:20px;border-width:2px;border-bottom-width:7px;border-radius:20px}
   .application .app-copy p,.application .poster-description {font-size:18px;line-height:1.5}
   .application .app-meta {margin-top:24px;padding-top:20px}
   .application dt {font-size:14px}
   .application dd {font-size:17px}
   .application .app-note {font-size:15px}
   .application .poster-grid {height:auto;gap:8px}
-  .application .poster-grid figure {height:auto}
+  .application .poster-grid figure {height:auto;padding:5px;border-width:1px;border-bottom-width:4px;border-radius:10px}
   .application .poster-meta {grid-template-columns:1fr;gap:18px}
   .application .poster-description {margin-top:24px}
   .strategy-grid {grid-template-columns:1fr;gap:18px}
@@ -277,56 +297,56 @@ p{margin:0;font-size:38px;line-height:1.35}
 <p class="ab mut" style="left:100px;top:995px;width:1390px;font-size:24px">Üniversite projesi için hazırlanan konsept önerisidir. Kampanya yayınlanmamış, etkinlik gerçekleştirilmemiştir.</p>
 </section>
 
-<section class="s application" data-bg="#fff" data-q="12" data-t="45" aria-label="Basılı reklam uygulamaları">
+<section class="s application app-print" data-bg="#fbfdf6" data-q="12" data-t="45" aria-label="Basılı reklam uygulamaları">
 <p class="app-label">Make the Mistake · Üniversite projesi / konsept uygulama</p>
 <h2>Basılı reklam uygulamaları</h2>
 <div class="poster-grid">
-<figure><img class="app-art" src="duolingo-assets/afis-1.png" width="1080" height="1440" alt="Birinci afiş: I goed to school. Yanlış söyledin, ama konuştun!"/></figure>
-<figure><img class="app-art" src="duolingo-assets/afis-2.png" width="1080" height="1440" alt="İkinci afiş: İlk cümlen yanlış olabilir, ama güzel bir arkadaşlığın başlangıcı da olabilir."/></figure>
-<figure><img class="app-art" src="duolingo-assets/afis-3.png" width="1080" height="1440" alt="Üçüncü afiş: Duo Goes Offline etkinlik duyurusu. Uygulamadan tanıdığın Duo, şimdi kampüsünde."/></figure>
+<figure><button class="app-open" type="button" aria-label="Birinci afişi büyüt"><img class="app-art" src="duolingo-assets/afis-1.png" width="1080" height="1440" alt="Birinci afiş: I goed to school. Yanlış söyledin, ama konuştun!"/></button></figure>
+<figure><button class="app-open" type="button" aria-label="İkinci afişi büyüt"><img class="app-art" src="duolingo-assets/afis-2.png" width="1080" height="1440" alt="İkinci afiş: İlk cümlen yanlış olabilir, ama güzel bir arkadaşlığın başlangıcı da olabilir."/></button></figure>
+<figure><button class="app-open" type="button" aria-label="Üçüncü afişi büyüt"><img class="app-art" src="duolingo-assets/afis-3.png" width="1080" height="1440" alt="Üçüncü afiş: Duo Goes Offline etkinlik duyurusu. Uygulamadan tanıdığın Duo, şimdi kampüsünde."/></button></figure>
 </div>
 <p class="poster-description">Üç afişten oluşan seri, yabancı dil konuşurken hata yapma çekincesini farklı yaratıcı yaklaşımlarla ele alır. İlk iki afiş konuşmayı deneme fikrini işler. Üçüncü afiş, Duo Goes Offline etkinliğini duyurarak hedef kitleyi fiziksel deneyime yönlendirmeyi amaçlar.</p>
 <dl class="app-meta poster-meta"><div><dt>Mecra</dt><dd>Üniversite içi basılı reklam alanları</dd></div><div><dt>Amaç</dt><dd>Farkındalık oluşturmak ve etkinliğe katılımı teşvik etmek</dd></div></dl>
 </section>
 
-<section class="s application" data-bg="#fff" data-q="13" data-t="35" aria-label="Dijital mecra: Instagram">
+<section class="s application app-digital" data-bg="#faf7ff" data-q="13" data-t="35" aria-label="Dijital mecra: Instagram">
 <p class="app-label">Make the Mistake · Üniversite projesi / konsept uygulama</p>
 <h2>Dijital mecra: Instagram</h2>
 <div class="app-layout">
-<figure class="app-visual"><img class="app-art" src="duolingo-assets/instagram-cctv.png" width="1080" height="1440" alt="Instagram CCTV teaser konsepti: Duo'nun gece üniversite lobisinde güvenlik kamerasına yakalandığı kurgusal görüntü."/></figure>
+<figure class="app-visual"><button class="app-open" type="button" aria-label="Instagram görselini büyüt"><img class="app-art" src="duolingo-assets/instagram-cctv.png" width="1080" height="1440" alt="Instagram CCTV teaser konsepti: Duo'nun gece üniversite lobisinde güvenlik kamerasına yakalandığı kurgusal görüntü."/></button></figure>
 <div class="app-copy"><p>Duo'nun gece üniversitede güvenlik kamerasına yakalandığı kurgusal görüntü, markanın absürt mizah anlayışından yararlanan bir Instagram teaser'ı olarak tasarlanmıştır. Etkinliğin ayrıntılarını hemen açıklamadan merak ve etkileşim oluşturmayı hedefler.</p>
 <dl class="app-meta"><div><dt>Mecra</dt><dd>Instagram gönderisi</dd></div><div><dt>Amaç</dt><dd>Merak uyandırmak, sosyal medya etkileşimi oluşturmak ve etkinliğe yönelik beklenti yaratmak</dd></div></dl>
 <p class="app-note">Afişlerin duyurduğu kampüs deneyimi için dijital ortamda ilk ipucunu sunar.</p></div>
 </div>
 </section>
 
-<section class="s application" data-bg="#fff" data-q="14" data-t="35" aria-label="Deneyimsel pazarlama: Welcome Zone">
+<section class="s application app-experience" data-bg="#f8fcf5" data-q="14" data-t="35" aria-label="Deneyimsel pazarlama: Welcome Zone">
 <p class="app-label">Deneyimsel pazarlama · Üniversite projesi / konsept uygulama</p>
 <h2>Welcome Zone</h2>
 <div class="app-layout">
-<figure class="app-visual"><img class="app-art" src="duolingo-assets/welcome-zone.png" width="1448" height="1086" alt="Welcome Zone konsept tasarımı: asansör lobisinde Duolingo karşılama bankosu, görev kartları ve etkinlik personeli."/></figure>
+<figure class="app-visual"><button class="app-open" type="button" aria-label="Welcome Zone görselini büyüt"><img class="app-art" src="duolingo-assets/welcome-zone.png" width="1448" height="1086" alt="Welcome Zone konsept tasarımı: asansör lobisinde Duolingo karşılama bankosu, görev kartları ve etkinlik personeli."/></button></figure>
 <div class="app-copy"><p>Welcome Zone, öğrencilerin Duo Goes Offline deneyimiyle ilk karşılaşacağı nokta olarak planlanmıştır. Duolingo kimliğiyle tasarlanan karşılama bankosu, görev kartları ve etkinlik personeli aracılığıyla ziyaretçilere bilgi verilmesi ve katılımın başlatılması öngörülür.</p>
 <dl class="app-meta"><div><dt>Önerilen konum</dt><dd>İstanbul Gelişim Üniversitesi, 4. kat asansör lobisi</dd></div><div><dt>Amaç</dt><dd>Öğrencileri karşılamak, bilgilendirmek ve deneyime yönlendirmek</dd></div></dl>
 <p class="app-note">Basılı ve dijital duyurulardan gelen ilgi, burada gönüllü katılıma dönüşür.</p></div>
 </div>
 </section>
 
-<section class="s application" data-bg="#fff" data-q="15" data-t="35" aria-label="Deneyimsel pazarlama: Speaking Zone">
+<section class="s application app-experience" data-bg="#f8fcf5" data-q="15" data-t="35" aria-label="Deneyimsel pazarlama: Speaking Zone">
 <p class="app-label">Deneyimsel pazarlama · Üniversite projesi / konsept uygulama</p>
 <h2>Speaking Zone</h2>
 <div class="app-layout">
-<figure class="app-visual"><img class="app-art" src="duolingo-assets/speaking-zone.png" width="1448" height="1086" alt="Speaking Zone konsept tasarımı: sanat galerisinde konuşma kartları, sohbet masaları ve Duolingo kimliğine uygun oturma alanları."/></figure>
+<figure class="app-visual"><button class="app-open" type="button" aria-label="Speaking Zone görselini büyüt"><img class="app-art" src="duolingo-assets/speaking-zone.png" width="1448" height="1086" alt="Speaking Zone konsept tasarımı: sanat galerisinde konuşma kartları, sohbet masaları ve Duolingo kimliğine uygun oturma alanları."/></button></figure>
 <div class="app-copy"><p>Speaking Zone, öğrencilerin konuşma kartları ve kısa sohbet görevleriyle İngilizce pratik yapabileceği sosyal bir deneyim alanı olarak tasarlanmıştır. Gönüllü katılıma dayanan bu öneri, konuşurken hata yapma kaygısını azaltabilecek rahat bir ortam sunmayı amaçlar.</p>
 <dl class="app-meta"><div><dt>Önerilen konum</dt><dd>Sanat Galerisi</dd></div><div><dt>Amaç</dt><dd>Dijital dil öğrenme deneyimini yüz yüze iletişimle birleştirmek</dd></div></dl>
 <p class="app-note">Afişlerdeki konuşmayı deneme fikrini kısa, gönüllü sohbet görevleriyle deneyime taşır.</p></div>
 </div>
 </section>
 
-<section class="s application" data-bg="#fff" data-q="16" data-t="35" aria-label="Deneyimsel pazarlama: Mistake Wall">
+<section class="s application app-experience" data-bg="#f8fcf5" data-q="16" data-t="35" aria-label="Deneyimsel pazarlama: Mistake Wall">
 <p class="app-label">Deneyimsel pazarlama · Üniversite projesi / konsept uygulama</p>
 <h2>Mistake Wall</h2>
 <div class="app-layout">
-<figure class="app-visual"><img class="app-art" src="duolingo-assets/mistake-wall.png" width="1448" height="1086" alt="Mistake Wall konsept tasarımı: katılımcıların dil öğrenirken yaptıkları hataları anonim notlarla paylaşabileceği interaktif duvar."/></figure>
+<figure class="app-visual"><button class="app-open" type="button" aria-label="Mistake Wall görselini büyüt"><img class="app-art" src="duolingo-assets/mistake-wall.png" width="1448" height="1086" alt="Mistake Wall konsept tasarımı: katılımcıların dil öğrenirken yaptıkları hataları anonim notlarla paylaşabileceği interaktif duvar."/></button></figure>
 <div class="app-copy"><p>Mistake Wall, katılımcıların İngilizce öğrenirken yaptıkları komik veya unutamadıkları hataları anonim olarak paylaşabileceği interaktif bir alan önerisidir. Hataların dil öğrenmenin doğal bir parçası olduğu fikrini katılımcı deneyimiyle görünür kılmayı amaçlar.</p>
 <dl class="app-meta"><div><dt>Önerilen konum</dt><dd>Sanat Galerisi'nin yan bölümü</dd></div><div><dt>Amaç</dt><dd>Katılımcı etkileşimi oluşturmak ve kampanyanın temel mesajını deneyimle pekiştirmek</dd></div></dl>
 <p class="app-note">Konuşma deneyimini, katılımcıların kendi hatalarını paylaşmasıyla tamamlar.</p></div>
@@ -352,6 +372,7 @@ p{margin:0;font-size:38px;line-height:1.35}
 </div>
 <div aria-live="polite" id="toast" role="status"><div class="tn"><div class="ti"></div><div><b>Duolingo · şimdi</b><div class="tx"></div></div></div></div>
 <nav aria-label="Slayt gezinme" class="nav"><button aria-label="Önceki slayt" id="pv">←</button><span aria-live="polite" id="slide-number" role="status"></span><button aria-label="Sonraki slayt" id="nx">→</button></nav>
+<dialog id="image-viewer" aria-label="Görseli büyütülmüş görüntüle"><div class="viewer-bar"><span id="viewer-title"></span><button id="viewer-close" type="button" aria-label="Büyütülmüş görseli kapat">Kapat ×</button></div><img id="viewer-image" alt=""/></dialog>
 <script>
 (function(){
 var stage=document.getElementById('stage'),st=document.getElementById('st'),s=[].slice.call(st.querySelectorAll('.s')),i=0,
@@ -367,6 +388,16 @@ function split(n,c){[].slice.call(n.childNodes).forEach(function(k){
 document.querySelectorAll('.words').forEach(function(e){split(e,{n:0})});
 var portrait=matchMedia('(max-width:900px) and (orientation:portrait)'),
  reducedMotion=matchMedia('(prefers-reduced-motion:reduce)');
+var viewer=document.getElementById('image-viewer'),viewerImage=document.getElementById('viewer-image'),viewerTitle=document.getElementById('viewer-title');
+document.querySelectorAll('.app-open').forEach(function(button){button.addEventListener('click',function(){
+ var original=button.querySelector('img');
+ viewerImage.src=original.currentSrc||original.src;
+ viewerImage.alt=original.alt;
+ viewerTitle.textContent=button.getAttribute('aria-label').replace(' görselini büyüt','').replace(' afişi büyüt',' afiş');
+ viewer.showModal();
+})});
+document.getElementById('viewer-close').addEventListener('click',function(){viewer.close()});
+viewer.addEventListener('click',function(e){if(e.target===viewer)viewer.close()});
 function fit(){
  if(portrait.matches){stage.style.transform='none';return}
  // Keep native pinch zoom intact; only fit when the viewport is unzoomed.
@@ -435,6 +466,7 @@ var tSchedT;function tSched(first){clearTimeout(tSchedT);tSchedT=setTimeout(toas
 tSched(true);
 pv.onclick=function(){go(i-1)};nx.onclick=function(){go(i+1)};
 document.addEventListener('keydown',function(e){
+ if(viewer.open)return;
  if(e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT|BUTTON/.test(e.target.tagName)||e.target.isContentEditable)return;
  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(i+1)}
  if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}
