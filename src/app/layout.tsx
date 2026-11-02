@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/react"
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import "./refresh.css"
+import "./works.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.melih.work"),

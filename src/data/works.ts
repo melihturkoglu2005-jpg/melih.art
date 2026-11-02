@@ -1,4 +1,4 @@
-export type WorkType = "SOCIAL_MEDIA" | "UI/UX"
+export type WorkType = "SOCIAL_MEDIA" | "UI/UX" | "LOGO"
 
 export type Work = {
   id: string
@@ -13,15 +13,18 @@ export type Work = {
   height: number
 }
 
-// Filtre düğmelerinin sırası ve yazısı
+// Filtre düğmelerinin sırası ve yazısı. İşi olmayan kategori galeride görünmez;
+// ilk logoyu works listesine type "LOGO" ile eklediğin anda "Logo" düğmesi kendiliğinden belirir.
 export const filters: { type: WorkType, label: string }[] = [
   { type: "SOCIAL_MEDIA", label: "Sosyal medya" },
-  { type: "UI/UX", label: "UI/UX" }
+  { type: "UI/UX", label: "UI/UX" },
+  { type: "LOGO", label: "Logo" }
 ]
 
 const formats: Record<WorkType, string> = {
   "SOCIAL_MEDIA": "Sosyal medya tasarımı",
-  "UI/UX": "Arayüz tasarımı (UI/UX)"
+  "UI/UX": "Arayüz tasarımı (UI/UX)",
+  "LOGO": "Logo tasarımı"
 }
 
 // Yeni bir tasarım eklemek için: görseli public/images/works klasörüne koy (webp, 1080 px genişlik),

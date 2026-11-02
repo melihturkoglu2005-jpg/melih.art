@@ -1,10 +1,7 @@
 import { Fragment, type CSSProperties } from "react"
 import Link from "next/link"
 import { profile } from "@/data/profile"
-import { heroWorks } from "@/data/works"
 import { HeroArtNarrow, HeroArtWide } from "./HeroArt"
-import { Doodle } from "./Doodles"
-import WorkButton from "./WorkButton"
 
 const delay = (ms: number) => ({ "--d": `${ ms }ms` }) as CSSProperties
 
@@ -60,28 +57,6 @@ export default function Hero() {
         <HeroArtNarrow />
       </div>
 
-      <div className="work-shelf">
-        <h2 className="selected-title" id="selected-title">
-          <span className="mark-wrap">
-            Seçili Çalışmalarım
-            <Doodle name="underline" className="mark" stretch delay={ 500 } />
-          </span>
-        </h2>
-        <div className="marquee" role="region" aria-labelledby="selected-title">
-          <div className="marquee-track">
-            { [ ...heroWorks, ...heroWorks ].map((work, index) => {
-              const copy = index >= heroWorks.length
-
-              return (
-                <figure key={ `${ work.id }-${ copy ? "b" : "a" }` } aria-hidden={ copy || undefined }>
-                  <WorkButton work={ work } hidden={ copy } eager preview priority={ index < 2 } />
-                </figure>
-              )
-            }) }
-          </div>
-        </div>
-        <p className="shelf-note">Yakından bakmak için bir çalışmaya dokun.</p>
-      </div>
     </section>
   )
 }
