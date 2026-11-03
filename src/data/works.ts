@@ -15,10 +15,10 @@ export type Work = {
 
 // Filtre düğmelerinin sırası ve yazısı. İşi olmayan kategori galeride görünmez;
 // ilk logoyu works listesine type "LOGO" ile eklediğin anda "Logo" düğmesi kendiliğinden belirir.
-export const filters: { type: WorkType, label: string }[] = [
-  { type: "SOCIAL_MEDIA", label: "Sosyal medya" },
-  { type: "UI/UX", label: "UI/UX" },
-  { type: "LOGO", label: "Logo" }
+export const filters: { type: WorkType, label: string, blurb: string }[] = [
+  { type: "SOCIAL_MEDIA", label: "Sosyal medya", blurb: "Marka ve kampanya gönderileri" },
+  { type: "UI/UX", label: "UI/UX", blurb: "Mobil uygulama arayüzleri" },
+  { type: "LOGO", label: "Logo", blurb: "Marka işaretleri ve logo çalışmaları" }
 ]
 
 const formats: Record<WorkType, string> = {
@@ -44,35 +44,35 @@ const w = (id: string, width: number, height: number, type: WorkType, title: str
 
 export const works: Work[] = [
   w("food", 1600, 900, "UI/UX", "Yemek Sipariş Uygulaması",
-    "Bu kullanıcı arayüzü (UI) çalışmasında, kullanıcı dostu bir deneyim (UX) ile modern estetiği birleştirmeyi hedefledim. Canlı renk paleti ve temiz kart tasarımları sayesinde kullanıcının yemek seçme ve sipariş verme sürecini en akıcı hale getirdim."),
-  w("trippica", 1080, 1350, "SOCIAL_MEDIA", "Trippica Yaklaşan Etkinlikler",
-    "Gezgin ruhunu ve global erişimi simgeleyen bulut temalı arka plan, net tipografik hiyerarşiyle birleştirilerek etkinlik takvimi içeriği kolayca taranabilir hale getirilmiştir. Alt kısımda kullanılan yırtık kağıt dokusu ve kurumsal CTA (eyleme çağrı) butonları, dijital bir markanın modern ve dinamik sosyal medya estetiğini yansıtmaktadır."),
-  w("flux", 1080, 1350, "SOCIAL_MEDIA", "Dijital Finans Kontrolü: Flux",
-    "Bu çalışmada karanlık arayüz ve net tipografiyle kontrol duygusunu güçlendirmeyi hedefledim. Akışkan geçişler ve sade hiyerarşi sayesinde tasarımı modern, güven veren ve odaklanmayı kolaylaştıran bir yapıda kurguladım 🌑✨."),
-  w("sunify1", 1080, 1350, "SOCIAL_MEDIA", "Sunify Sosyal Medya Tasarımı",
-    "Bu çalışmada aracın serin kalmasını sağlarken aynı anda temiz enerji üretme fikrini ön plana çıkarmak için modern mimari çizgileri güneş panelleriyle bütünleştirdim ☀️. Güneşten korunma ve güneşle şarj olma fikrini tek bir yapı altında toplayarak, otopark alanını pasif bir alan olmaktan çıkarıp aktif bir enerji kaynağı olarak konumlandırdım ⚡🚗."),
-  w("zey3", 1080, 1350, "SOCIAL_MEDIA", "Zey Glass Nass Hospital",
-    "Teknik detayları minimalist bir tipografiyle harmanlayarak, sosyal medya akışında kurumsal prestiji ve modern mimari estetiği ön plana çıkaran bir görsel dil kurgulanmıştır."),
-  w("cuzdan", 1600, 900, "UI/UX", "Dijital Cüzdan ve Finans Yönetimi",
-    "Bu çalışmada, karmaşık finansal verileri kullanıcı için anlaşılır ve estetik bir arayüze dönüştürmeyi amaçladım. Dark Mode (Karanlık Tema) tercihiyle premium bir his yaratırken, mor ve neon vurgularla modern fintech dünyasının dinamizmini yansıttım."),
-  w("matcha", 1000, 1415, "SOCIAL_MEDIA", "Çilekli Matcha: Bir Doğa Masalı",
-    "Bu çalışmada, ürünün doğal ve ferahlatıcı içeriğini vurgulamak için 'mikro dünya' konsepti kullanılmıştır. İçecek, masalsı bir bahçenin merkezine yerleştirilerek bir hikaye oluşturulmuştur."),
-  w("zey2", 1080, 1350, "SOCIAL_MEDIA", "Zey Glass Nass Hospital",
-    "Teknik detayları minimalist bir tipografiyle harmanlayarak, sosyal medya akışında kurumsal prestiji ve modern mimari estetiği ön plana çıkaran bir görsel dil kurgulanmıştır."),
+    "Yemek seçme, ürüne göz atma ve siparişi tamamlama adımlarını üç ekranda topladım. Menünün kolay gezilmesine ve sipariş özetinin açık olmasına odaklandım."),
+  w("trippica", 1080, 1350, "SOCIAL_MEDIA", "Trippica · Kripto Etkinlik Takvimi",
+    "Üç etkinliğin adını ve şehirlerini bir takvimde topladım. Tarihleri büyük tuttum; bulutlu gökyüzü ve yırtık kâğıt detayını arka planda kullandım."),
+  w("flux", 1080, 1350, "SOCIAL_MEDIA", "Flux · Uygulama Tanıtımı",
+    "Flux'un finans ekranını merkeze alan bir tanıtım postu. Varlıklar, yaklaşan ödemeler ve son işlemler telefonda bir arada görünüyor."),
+  w("sunify1", 1080, 1350, "SOCIAL_MEDIA", "Sunify · Güneş Enerjili Otopark",
+    "Güneş enerjili otopark fikrini doğrudan anlatmak istedim: araç gölgede duruyor, paneller de enerji üretiyor."),
+  w("zey3", 1080, 1350, "SOCIAL_MEDIA", "Zey Glass · Nass Hospital",
+    "Nass Hospital'ın dış cephesini ve projede kullanılan camları aynı tasarımda gösterdim. Yapının görüntüsüne geniş yer bırakıp teknik bilgiyi kısa tuttum."),
+  w("cuzdan", 1600, 900, "UI/UX", "Flux · Finans Ekranları",
+    "Flux için hazırladığım iki ekran, günlük para takibini ve harcamaların dağılımını gösteriyor. Koyu arayüzde bilgileri küçük kartlara ayırdım."),
+  w("matcha", 1000, 1415, "SOCIAL_MEDIA", "Çilekli Matcha",
+    "Çilekli matcha'yı küçük bir bahçenin içine taşıdım. Bardağın çevresine çilekler ve minyatür figürler yerleştirerek kendi küçük dünyasını kurdum."),
+  w("zey2", 1080, 1350, "SOCIAL_MEDIA", "Zey Glass · Nass Hospital Avlusu",
+    "Nass Hospital'ın bu kez avlu ve giriş bölümüne odaklandım. Cam cepheyi gösterirken kullanılan cam türlerini de görsele ekledim."),
   w("travel", 1600, 900, "UI/UX", "Seyahat Planlama Uygulaması",
-    "Kişiye özel seyahat önerilerini keşfetmeyi sağlayan bir mobil uygulama. Popüler turları, yeni rotaları, şehir rehberlerini ve detaylı gezi bilgilerini görüntüleyin. Mesafe, süre, sıcaklık ve kullanıcı puanlarını inceleyin"),
-  w("sicak", 1080, 1350, "SOCIAL_MEDIA", "Sıcak Çikolata Kampanyası",
-    "Bu çalışmada kış mevsiminin huzurunu ve yılbaşının coşkusunu birleştirmeyi hedefledim. Tasarımda ürünün 'iç ısıtan' etkisini vurgulamak için doğal elementler ile yılbaşı sembollerini harmanladım."),
-  w("pizza", 1080, 1350, "SOCIAL_MEDIA", "Pizza Sosyal Medya Tasarımı",
-    "Pizza markaları için sosyal medya post tasarımı. 🌿🍕 Bu tasarımda, 'saf İtalyan keyfi' mesajını desteklemek amacıyla ürün, taze içeriklerin doğal ortamıyla birleştirilmiştir."),
-  w("oppi", 1080, 1350, "SOCIAL_MEDIA", "Oppi 14 Şubat",
-    "Dijital bir finans markasının logosunu duygusal bir hikaye anlatımıyla somutlaştırarak, şık ve kampanya odaklı bir tasarım yapılmıştır."),
-  w("zey1", 1080, 1350, "SOCIAL_MEDIA", "Zey Glass Lara Park",
-    "Teknik detayları minimalist bir tipografiyle harmanlayarak, sosyal medya akışında kurumsal prestiji ve modern mimari estetiği ön plana çıkaran bir görsel dil kurgulanmıştır."),
-  w("sunify2", 1080, 1350, "SOCIAL_MEDIA", "Sunify Sosyal Medya Tasarımı",
-    "Bu çalışmada teknik güven duygusunu ve sürdürülebilir hizmet anlayışını vurgulamayı amaçladım. Tasarımda uzman personel figürüyle, sistemin yalnızca kurulum anında değil sonrasında da profesyonel bir şekilde takip edildiğini görsel olarak destekledim 👷‍♂️📋."),
-  w("oppi1", 1080, 1350, "SOCIAL_MEDIA", "Oppi Haftalık Haber",
-    "Haftalık yoğun bilgi içeriği, kullanıcıyı yormayan temiz bir hiyerarşi ve tematik dokularla zenginleştirilerek kaydırılabilir içerik formatına uygun hale getirilmiştir.")
+    "Rota arama ve şehir keşfini bir arada gösteren mobil ekranlar. Fotoğraflara alan açan sade, koyu bir arayüz kullandım."),
+  w("sicak", 1080, 1350, "SOCIAL_MEDIA", "Yılbaşı İçin Sıcak Çikolata",
+    "Karlı ormanın ortasına, yılbaşı şapkası takmış bir sıcak çikolata yerleştirdim. Soğuk manzara içeceğin sıcaklığını daha belirgin kılıyor."),
+  w("pizza", 1080, 1350, "SOCIAL_MEDIA", "Mozzarella Pizza",
+    "Mozzarella pizzayı domates ve fesleğenle aynı masaya koydum; arka planda İtalya kırsalını çağrıştıran bir manzara kullandım."),
+  w("oppi", 1080, 1350, "SOCIAL_MEDIA", "Oppi · Sevgililer Günü",
+    "Oppi logosunu bir yüzük kutusuna taşıdım. Sevgililer Günü fikrini markanın kendi işaretinden kurdum."),
+  w("zey1", 1080, 1350, "SOCIAL_MEDIA", "Zey Glass · Lara Park Premium",
+    "Lara Park Premium'un mimarisini ana görsel olarak kullandım; cam detaylarını da kısa bir teknik notla ekledim."),
+  w("sunify2", 1080, 1350, "SOCIAL_MEDIA", "Sunify · Periyodik Bakım",
+    "Güneş paneli kurulduktan sonra verilen bakım desteğini anlatan bir çalışma. Teknik personel görseliyle hizmetin devam ettiğini gösterdim."),
+  w("oppi1", 1080, 1350, "SOCIAL_MEDIA", "Oppi · Haftalık Kripto Haberleri",
+    "Haftanın kripto başlıklarını küçük bir gazete sayfası gibi düzenledim. Farklı haberleri tek postta toparladım.")
 ]
 
 const byId = (id: string): Work => works.find((work) => work.id === id)!
