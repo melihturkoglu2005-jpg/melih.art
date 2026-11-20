@@ -17,7 +17,7 @@ export default function Footer() {
         <nav className="footer-links" aria-label="Alt menü">
           <Link href="/beta#projeler">Projelerim</Link>
           <Link href="/beta/hakkimda">Hakkımda</Link>
-          { profile.social.map((link) => <a key={ link.label } href={ link.href } target="_blank" rel="noopener noreferrer">{ link.label } <span aria-hidden="true">↗</span></a>) }
+          { profile.social.filter((link) => link.label !== "Behance").map((link) => <a key={ link.label } href={ link.href } target="_blank" rel="noopener noreferrer">{ link.label } <span aria-hidden="true">↗</span></a>) }
         </nav>
         <a className="footer-top" href="#top">Yukarı dön <span aria-hidden="true">↑</span></a>
       </div>
