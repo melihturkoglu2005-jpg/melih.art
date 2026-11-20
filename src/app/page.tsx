@@ -1,3 +1,16 @@
-export default function BlackPage() {
-  return <main aria-label="Boş sayfa" style={ { minHeight: "100dvh", background: "#000" } } />
+import Hero from "@/components/Hero"
+import Works from "@/components/Works"
+import Projects from "@/components/Projects"
+import Shell from "@/components/Shell"
+
+export default function Page() {
+  return (
+    <Shell>
+      <main id="top">
+        <Hero />
+        <Works />
+        <Projects />
+      </main>
+    </Shell>
+  )
 }
